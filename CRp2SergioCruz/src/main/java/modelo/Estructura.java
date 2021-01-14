@@ -17,8 +17,8 @@ public class Estructura extends Carta{
         return String.valueOf(Integer.parseInt(this.costo)/(this.dano + this.vida));
     }
 
-    public Estructura(int TiempoEnBatalla, String string, String string1, String string2, String string3, String string4, int i, int i1) {
-        super(string, string1, string2, string3, string4, i, i1);
+    public Estructura(int TiempoEnBatalla, String objetivos, String nombre, String alcance, String calidad, String costo, String ruta, int dano, int vida) {
+        super(objetivos, nombre, alcance, calidad, costo, ruta, dano, vida);
         this.TiempoEnBatalla = TiempoEnBatalla;
     }
 

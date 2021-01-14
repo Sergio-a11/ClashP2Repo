@@ -5,6 +5,16 @@
  */
 package vista;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.JSpinner;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Sergio Cruz
@@ -29,6 +39,7 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
 
         pndFondoRegCarta = new javax.swing.JPanel();
         pndImagen = new javax.swing.JPanel();
+        lblIcon = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblObjs = new javax.swing.JLabel();
         lblTipo = new javax.swing.JLabel();
@@ -73,11 +84,11 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         pndImagen.setLayout(pndImagenLayout);
         pndImagenLayout.setHorizontalGroup(
             pndImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
+            .addComponent(lblIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
         );
         pndImagenLayout.setVerticalGroup(
             pndImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addComponent(lblIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
         );
 
         lblNombre.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
@@ -193,8 +204,8 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                                         .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(txtNombre)
                                             .addComponent(cmbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(cmbAlcance, javax.swing.GroupLayout.Alignment.TRAILING, 0, 339, Short.MAX_VALUE)
-                                            .addComponent(cmbObjs, javax.swing.GroupLayout.Alignment.TRAILING, 0, 339, Short.MAX_VALUE)
+                                            .addComponent(cmbAlcance, javax.swing.GroupLayout.Alignment.TRAILING, 0, 426, Short.MAX_VALUE)
+                                            .addComponent(cmbObjs, javax.swing.GroupLayout.Alignment.TRAILING, 0, 426, Short.MAX_VALUE)
                                             .addComponent(txtsDano)
                                             .addComponent(txtsVida, javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(cmbCalidad, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -313,6 +324,295 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRutaActionPerformed
 
+    public JButton getBtnRegistrarCarta() {
+        return btnRegistrarCarta;
+    }
+
+    public void setBtnRegistrarCarta(JButton btnRegistrarCarta) {
+        this.btnRegistrarCarta = btnRegistrarCarta;
+    }
+
+    public JButton getBtnSubirImagen() {
+        return btnSubirImagen;
+    }
+
+    public void setBtnSubirImagen(JButton btnSubirImagen) {
+        this.btnSubirImagen = btnSubirImagen;
+    }
+
+    public JComboBox<String> getCmbAlcance() {
+        return cmbAlcance;
+    }
+
+    public void setCmbAlcance(JComboBox<String> cmbAlcance) {
+        this.cmbAlcance = cmbAlcance;
+    }
+
+    public JComboBox<String> getCmbCalidad() {
+        return cmbCalidad;
+    }
+
+    public void setCmbCalidad(JComboBox<String> cmbCalidad) {
+        this.cmbCalidad = cmbCalidad;
+    }
+
+    public JComboBox<String> getCmbObjs() {
+        return cmbObjs;
+    }
+
+    public void setCmbObjs(JComboBox<String> cmbObjs) {
+        this.cmbObjs = cmbObjs;
+    }
+
+    public JComboBox<String> getCmbTipo() {
+        return cmbTipo;
+    }
+
+    public void setCmbTipo(JComboBox<String> cmbTipo) {
+        this.cmbTipo = cmbTipo;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JLabel getLblAlcance() {
+        return lblAlcance;
+    }
+
+    public void setLblAlcance(JLabel lblAlcance) {
+        this.lblAlcance = lblAlcance;
+    }
+
+    public JLabel getLblCalidad() {
+        return lblCalidad;
+    }
+
+    public void setLblCalidad(JLabel lblCalidad) {
+        this.lblCalidad = lblCalidad;
+    }
+
+    public JLabel getLblCosto() {
+        return lblCosto;
+    }
+
+    public void setLblCosto(JLabel lblCosto) {
+        this.lblCosto = lblCosto;
+    }
+
+    public JLabel getLblDano() {
+        return lblDano;
+    }
+
+    public void setLblDano(JLabel lblDano) {
+        this.lblDano = lblDano;
+    }
+
+    public JLabel getLblDesc() {
+        return lblDesc;
+    }
+
+    public void setLblDesc(JLabel lblDesc) {
+        this.lblDesc = lblDesc;
+    }
+
+    public JLabel getLblDuracion() {
+        return lblDuracion;
+    }
+
+    public void setLblDuracion(JLabel lblDuracion) {
+        this.lblDuracion = lblDuracion;
+    }
+
+    public JLabel getLblNombre() {
+        return lblNombre;
+    }
+
+    public void setLblNombre(JLabel lblNombre) {
+        this.lblNombre = lblNombre;
+    }
+
+    public JLabel getLblObjs() {
+        return lblObjs;
+    }
+
+    public void setLblObjs(JLabel lblObjs) {
+        this.lblObjs = lblObjs;
+    }
+
+    public JLabel getLblRadio() {
+        return lblRadio;
+    }
+
+    public void setLblRadio(JLabel lblRadio) {
+        this.lblRadio = lblRadio;
+    }
+
+    public JLabel getLblRuta() {
+        return lblRuta;
+    }
+
+    public void setLblRuta(JLabel lblRuta) {
+        this.lblRuta = lblRuta;
+    }
+
+    public JLabel getLblTiempo() {
+        return lblTiempo;
+    }
+
+    public void setLblTiempo(JLabel lblTiempo) {
+        this.lblTiempo = lblTiempo;
+    }
+
+    public JLabel getLblTipo() {
+        return lblTipo;
+    }
+
+    public void setLblTipo(JLabel lblTipo) {
+        this.lblTipo = lblTipo;
+    }
+
+    public JLabel getLblTitulo() {
+        return lblTitulo;
+    }
+
+    public void setLblTitulo(JLabel lblTitulo) {
+        this.lblTitulo = lblTitulo;
+    }
+
+    public JLabel getLblVelocidad() {
+        return lblVelocidad;
+    }
+
+    public void setLblVelocidad(JLabel lblVelocidad) {
+        this.lblVelocidad = lblVelocidad;
+    }
+
+    public JLabel getLblVida() {
+        return lblVida;
+    }
+
+    public void setLblVida(JLabel lblVida) {
+        this.lblVida = lblVida;
+    }
+
+    public JPanel getPndFondoRegCarta() {
+        return pndFondoRegCarta;
+    }
+
+    public void setPndFondoRegCarta(JPanel pndFondoRegCarta) {
+        this.pndFondoRegCarta = pndFondoRegCarta;
+    }
+
+    public JPanel getPndImagen() {
+        return pndImagen;
+    }
+
+    public void setPndImagen(JPanel pndImagen) {
+        this.pndImagen = pndImagen;
+    }
+
+    public JSeparator getSpr1() {
+        return spr1;
+    }
+
+    public void setSpr1(JSeparator spr1) {
+        this.spr1 = spr1;
+    }
+
+    public JTextField getTxtNombre() {
+        return txtNombre;
+    }
+
+    public void setTxtNombre(JTextField txtNombre) {
+        this.txtNombre = txtNombre;
+    }
+
+    public JTextField getTxtRuta() {
+        return txtRuta;
+    }
+
+    public void setTxtRuta(JTextField txtRuta) {
+        this.txtRuta = txtRuta;
+    }
+
+    public JTextArea getTxtaDescripcion() {
+        return txtaDescripcion;
+    }
+
+    public void setTxtaDescripcion(JTextArea txtaDescripcion) {
+        this.txtaDescripcion = txtaDescripcion;
+    }
+
+    public JSpinner getTxtsCosto() {
+        return txtsCosto;
+    }
+
+    public void setTxtsCosto(JSpinner txtsCosto) {
+        this.txtsCosto = txtsCosto;
+    }
+
+    public JSpinner getTxtsDano() {
+        return txtsDano;
+    }
+
+    public void setTxtsDano(JSpinner txtsDano) {
+        this.txtsDano = txtsDano;
+    }
+
+    public JSpinner getTxtsDuracion() {
+        return txtsDuracion;
+    }
+
+    public void setTxtsDuracion(JSpinner txtsDuracion) {
+        this.txtsDuracion = txtsDuracion;
+    }
+
+    public JSpinner getTxtsRadio() {
+        return txtsRadio;
+    }
+
+    public void setTxtsRadio(JSpinner txtsRadio) {
+        this.txtsRadio = txtsRadio;
+    }
+
+    public JSpinner getTxtsTiempo() {
+        return txtsTiempo;
+    }
+
+    public void setTxtsTiempo(JSpinner txtsTiempo) {
+        this.txtsTiempo = txtsTiempo;
+    }
+
+    public JSpinner getTxtsVelocidad() {
+        return txtsVelocidad;
+    }
+
+    public void setTxtsVelocidad(JSpinner txtsVelocidad) {
+        this.txtsVelocidad = txtsVelocidad;
+    }
+
+    public JSpinner getTxtsVida() {
+        return txtsVida;
+    }
+
+    public void setTxtsVida(JSpinner txtsVida) {
+        this.txtsVida = txtsVida;
+    }
+
+    public JLabel getLblIcon() {
+        return lblIcon;
+    }
+
+    public void setLblIcon(JLabel lblIcon) {
+        this.lblIcon = lblIcon;
+    }
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrarCarta;
@@ -328,6 +628,7 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblDano;
     private javax.swing.JLabel lblDesc;
     private javax.swing.JLabel lblDuracion;
+    private javax.swing.JLabel lblIcon;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblObjs;
     private javax.swing.JLabel lblRadio;

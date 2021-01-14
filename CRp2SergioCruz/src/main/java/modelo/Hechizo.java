@@ -17,8 +17,8 @@ public class Hechizo extends Carta{
         return String.valueOf(Integer.parseInt(this.costo)/(this.dano + this.vida));
     }
 
-    public Hechizo(int duracion, String objetivos, String nombre, String alcance, String calidad, String costo, int dano, int vida) {
-        super(objetivos, nombre, alcance, calidad, costo, dano, vida);
+    public Hechizo(int duracion, String objetivos, String nombre, String alcance, String calidad, String costo, String ruta, int dano, int vida) {
+        super(objetivos, nombre, alcance, calidad, costo, ruta, dano, vida);
         this.duracion = duracion;
     }
 

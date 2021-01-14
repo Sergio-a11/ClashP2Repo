@@ -18,8 +18,8 @@ public class Tropa extends Carta {
         return String.valueOf(Integer.parseInt(this.costo)/(this.dano + this.vida));
     }
 
-    public Tropa(String velocidadMovimineto, String objetivos, String nombre, String alcance, String calidad, String costo, int dano, int vida) {
-        super(objetivos, nombre, alcance, calidad, costo, dano, vida);
+    public Tropa(String velocidadMovimineto, String objetivos, String nombre, String alcance, String calidad, String costo, String ruta, int dano, int vida) {
+        super(objetivos, nombre, alcance, calidad, costo, ruta, dano, vida);
         this.velocidadMovimineto = velocidadMovimineto;
     }
 

@@ -10,10 +10,10 @@ package modelo;
  * @author Sergio Cruz
  */
 public abstract class Carta {
-    protected String objetivos, nombre, alcance, calidad, costo;
+    protected String objetivos, nombre, alcance, calidad, costo, ruta;
     protected int dano, vida;
 
-    public Carta(String objetivos, String nombre, String alcance, String calidad, String costo, int dano, int vida) {
+    public Carta(String objetivos, String nombre, String alcance, String calidad, String costo, String ruta, int dano, int vida) {
         this.objetivos = objetivos;
         this.nombre = nombre;
         this.alcance = alcance;
@@ -21,6 +21,7 @@ public abstract class Carta {
         this.costo = costo;
         this.dano = dano;
         this.vida = vida;
+        this.ruta = ruta;
     }
     
     public Carta() {
@@ -29,6 +30,7 @@ public abstract class Carta {
         this.alcance = "";
         this.calidad = "";
         this.costo = "";
+        this.ruta = "";
         this.dano = 0;
         this.vida = 0;
     }
@@ -73,6 +75,14 @@ public abstract class Carta {
         this.costo = costo;
     }
 
+    public String getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(String ruta) {
+        this.ruta = ruta;
+    }
+
     public int getDano() {
         return dano;
     }
@@ -91,7 +101,7 @@ public abstract class Carta {
 
     @Override
     public String toString() {
-        return "Carta{" + "objetivos=" + objetivos + ", nombre=" + nombre + ", alcance=" + alcance + ", calidad=" + calidad + ", costo=" + costo + ", dano=" + dano + ", vida=" + vida + '}';
+        return "Carta{" + "objetivos=" + objetivos + ", nombre=" + nombre + ", alcance=" + alcance + ", calidad=" + calidad + ", costo=" + costo + ", ruta=" + ruta + ", dano=" + dano + ", vida=" + vida + '}';
     }
     
     public abstract String Utilidad();
