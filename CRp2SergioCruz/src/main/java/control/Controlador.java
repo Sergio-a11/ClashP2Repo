@@ -92,10 +92,6 @@ public class Controlador implements ActionListener{
             {
                 case 0:
                 {
-                    //funcion enable
-                    //frmRC.getTxtsTiempo().setEnabled(true);
-                    //
-                    //frmRC.getPndImagen().setVisible(false);
                     Estructura est = new Estructura();
                     est.setNombre(frmRC.getTxtNombre().getText());
                     est.setObjetivos(frmRC.getCmbObjs().getName());
@@ -108,12 +104,40 @@ public class Controlador implements ActionListener{
                     carta = est;
                     break;
                 }
+                case 1:
+                {
+                    Hechizo hez = new Hechizo();
+                    hez.setNombre(frmRC.getTxtNombre().getText());
+                    hez.setObjetivos(frmRC.getCmbObjs().getName());
+                    hez.setAlcance(frmRC.getCmbAlcance().getName());
+                    hez.setDano(Integer.parseInt(frmRC.getTxtDano().getText()));
+                    hez.setVida(Integer.parseInt(frmRC.getTxtVida().getText()));
+                    hez.setCosto(Integer.parseInt(frmRC.getTxtCosto().getText()));
+                    hez.setCalidad(frmRC.getCmbCalidad().getName());
+                    hez.setRadio(Integer.parseInt(frmRC.getTxtRadio().getText()));
+                    hez.setDuracion(Integer.parseInt(frmRC.getTxtDuracion().getText()));
+                    carta = hez;
+                    break;
+                }
+                case 2:
+                {
+                    Tropa tro = new Tropa();
+                    tro.setNombre(frmRC.getTxtNombre().getText());
+                    tro.setObjetivos(frmRC.getCmbObjs().getName());
+                    tro.setAlcance(frmRC.getCmbAlcance().getName());
+                    tro.setDano(Integer.parseInt(frmRC.getTxtDano().getText()));
+                    tro.setVida(Integer.parseInt(frmRC.getTxtVida().getText()));
+                    tro.setCosto(Integer.parseInt(frmRC.getTxtCosto().getText()));
+                    tro.setCalidad(frmRC.getCmbCalidad().getName());
+                    tro.setVelocidadMovimineto(frmRC.getTxtVelocidad().getText());
+                }
             }
             
             //if(flag == false)
             if(ruta != null)
             {
                 carta.setRuta(ruta);
+                ruta = null;
             }
             else
             {
@@ -152,7 +176,9 @@ public class Controlador implements ActionListener{
         }
         if(ae.getSource() == frmCC.getBtnConsultar())
         {
-            frmCC.getTxtaBetaConsulta().setText(objC.getListaC().get(0).toString());
+            for (int i = 0; i < objC.getListaC().size(); i++) {
+                frmCC.getTxtaBetaConsulta().append(objC.getListaC().get(i).toString());
+            }
         }
     }
     
