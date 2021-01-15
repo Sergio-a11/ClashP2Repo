@@ -49,7 +49,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         lblDiseno.setText("Diseñado Por: Sergio Cruz");
         pndEscritorio.add(lblDiseno);
-        lblDiseno.setBounds(350, 370, 150, 16);
+        lblDiseno.setBounds(450, 490, 150, 16);
 
         MainMenuCartas.setText("Cartas");
 
@@ -84,11 +84,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+            .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 877, Short.MAX_VALUE)
+            .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 977, Short.MAX_VALUE)
         );
 
         pack();

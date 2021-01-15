@@ -43,21 +43,38 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <Component id="lblDesc" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="203" max="-2" attributes="0"/>
+                          <Component id="btnRegistrarCarta" min="-2" pref="400" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="332" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="pndHechizo" max="32767" attributes="0"/>
+                              <Component id="pndEstructuras" alignment="1" max="32767" attributes="0"/>
+                              <Component id="pndTropa" max="32767" attributes="0"/>
+                              <Component id="btnMas" alignment="1" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
                           <Component id="btnSubirImagen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="lblRuta" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                           <Component id="txtRuta" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="lblDesc" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -65,75 +82,53 @@
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="lblVelocidad" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                                          <Component id="txtsVelocidad" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblObjs" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblTipo" min="-2" pref="79" max="-2" attributes="0"/>
-                                              <Component id="lblNombre" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblAlcance" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblRadio" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblDano" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblVida" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblCalidad" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblCosto" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtNombre" max="32767" attributes="0"/>
-                                              <Component id="cmbTipo" max="32767" attributes="0"/>
-                                              <Component id="cmbAlcance" alignment="1" pref="426" max="32767" attributes="0"/>
-                                              <Component id="cmbObjs" alignment="1" pref="426" max="32767" attributes="0"/>
-                                              <Component id="txtsDano" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtsVida" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="cmbCalidad" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="txtsCosto" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="txtsRadio" alignment="1" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="lblTiempo" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                          <Component id="txtsTiempo" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="lblDuracion" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                          <Component id="txtsDuracion" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="lblObjs" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblTipo" min="-2" pref="79" max="-2" attributes="0"/>
+                                      <Component id="lblNombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblAlcance" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblDano" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblVida" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblCalidad" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblCosto" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtCosto" max="32767" attributes="0"/>
+                                      <Component id="txtNombre" max="32767" attributes="0"/>
+                                      <Component id="cmbTipo" max="32767" attributes="0"/>
+                                      <Component id="cmbAlcance" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="cmbObjs" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="cmbCalidad" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="txtDano" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="txtVida" alignment="1" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Component id="spr1" min="-2" pref="19" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="pndImagen" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
-                  <Component id="btnRegistrarCarta" min="-2" pref="400" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="pndImagen" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="spr1" alignment="1" min="-2" pref="503" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="spr1" min="-2" pref="338" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -155,18 +150,13 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblRadio" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtsRadio" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblDano" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtsDano" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtDano" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblVida" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtsVida" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtVida" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -176,35 +166,24 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblCosto" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtsCosto" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblTiempo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtsTiempo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtsDuracion" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblDuracion" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblVelocidad" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtsVelocidad" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtCosto" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
-                          <Component id="pndImagen" min="-2" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnMas" min="-2" pref="32" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="pndEstructuras" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="pndHechizo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="pndTropa" min="-2" pref="36" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblDesc" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="68" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="99" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -214,7 +193,7 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnRegistrarCarta" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -237,7 +216,11 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblIcon" alignment="0" pref="296" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="lblIcon" min="-2" pref="250" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -279,14 +262,6 @@
             <Property name="text" type="java.lang.String" value="Alcance"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblRadio">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Radio"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="lblDano">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -317,14 +292,6 @@
               <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Costo"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblTiempo">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Tiempo en Arena"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombre">
@@ -383,10 +350,6 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JSpinner" name="txtsDano">
-        </Component>
-        <Component class="javax.swing.JSpinner" name="txtsVida">
-        </Component>
         <Component class="javax.swing.JComboBox" name="cmbCalidad">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -402,8 +365,6 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JSpinner" name="txtsCosto">
-        </Component>
         <Component class="javax.swing.JLabel" name="lblRuta">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -412,34 +373,10 @@
             <Property name="text" type="java.lang.String" value="Ruta de Imagen"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="txtsDuracion">
-        </Component>
-        <Component class="javax.swing.JSpinner" name="txtsTiempo">
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblVelocidad">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Velocidad de Movimiento"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSpinner" name="txtsVelocidad">
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblDuracion">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Duraci&#xf3;n"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="txtRuta">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRutaActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JSpinner" name="txtsRadio">
         </Component>
         <Component class="javax.swing.JLabel" name="lblDesc">
           <Properties>
@@ -482,6 +419,155 @@
             <Property name="text" type="java.lang.String" value="Registro de Cartas"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JTextField" name="txtDano">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtVida">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCosto">
+        </Component>
+        <Container class="javax.swing.JPanel" name="pndEstructuras">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblTiempo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="txtTiempo" min="-2" pref="355" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblTiempo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtTiempo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblTiempo">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Tiempo en Arena"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTiempo">
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="btnMas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="M&#xe1;s"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JPanel" name="pndHechizo">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblDuracion" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblRadio" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtRadio" max="32767" attributes="0"/>
+                          <Component id="txtDuracion" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblDuracion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtDuracion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblRadio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtRadio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblDuracion">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Duraci&#xf3;n"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtDuracion">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblRadio">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Radio"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtRadio">
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="pndTropa">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblVelocidad" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="txtVelocidad" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblVelocidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtVelocidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblVelocidad">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Velocidad de Movimiento"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtVelocidad">
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

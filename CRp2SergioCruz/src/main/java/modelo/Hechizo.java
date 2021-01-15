@@ -14,10 +14,10 @@ public class Hechizo extends Carta{
     
     @Override
     public String Utilidad() {
-        return String.valueOf(Integer.parseInt(this.costo)/(this.dano + this.vida));
+        return String.valueOf((this.costo)/(this.dano + this.vida));
     }
 
-    public Hechizo(int duracion, String objetivos, String nombre, String alcance, String calidad, String costo, String ruta, int dano, int vida) {
+    public Hechizo(int duracion, String objetivos, String nombre, String alcance, String calidad, int costo, String ruta, int dano, int vida) {
         super(objetivos, nombre, alcance, calidad, costo, ruta, dano, vida);
         this.duracion = duracion;
     }

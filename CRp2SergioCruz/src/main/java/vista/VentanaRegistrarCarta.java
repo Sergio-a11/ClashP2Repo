@@ -44,35 +44,39 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         lblObjs = new javax.swing.JLabel();
         lblTipo = new javax.swing.JLabel();
         lblAlcance = new javax.swing.JLabel();
-        lblRadio = new javax.swing.JLabel();
         lblDano = new javax.swing.JLabel();
         lblVida = new javax.swing.JLabel();
         lblCalidad = new javax.swing.JLabel();
         lblCosto = new javax.swing.JLabel();
-        lblTiempo = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         spr1 = new javax.swing.JSeparator();
         cmbTipo = new javax.swing.JComboBox<>();
         cmbAlcance = new javax.swing.JComboBox<>();
         cmbObjs = new javax.swing.JComboBox<>();
-        txtsDano = new javax.swing.JSpinner();
-        txtsVida = new javax.swing.JSpinner();
         cmbCalidad = new javax.swing.JComboBox<>();
-        txtsCosto = new javax.swing.JSpinner();
         lblRuta = new javax.swing.JLabel();
-        txtsDuracion = new javax.swing.JSpinner();
-        txtsTiempo = new javax.swing.JSpinner();
-        lblVelocidad = new javax.swing.JLabel();
-        txtsVelocidad = new javax.swing.JSpinner();
-        lblDuracion = new javax.swing.JLabel();
         txtRuta = new javax.swing.JTextField();
-        txtsRadio = new javax.swing.JSpinner();
         lblDesc = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtaDescripcion = new javax.swing.JTextArea();
         btnSubirImagen = new javax.swing.JButton();
         btnRegistrarCarta = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
+        txtDano = new javax.swing.JTextField();
+        txtVida = new javax.swing.JTextField();
+        txtCosto = new javax.swing.JTextField();
+        pndEstructuras = new javax.swing.JPanel();
+        lblTiempo = new javax.swing.JLabel();
+        txtTiempo = new javax.swing.JTextField();
+        btnMas = new javax.swing.JButton();
+        pndHechizo = new javax.swing.JPanel();
+        lblDuracion = new javax.swing.JLabel();
+        txtDuracion = new javax.swing.JTextField();
+        lblRadio = new javax.swing.JLabel();
+        txtRadio = new javax.swing.JTextField();
+        pndTropa = new javax.swing.JPanel();
+        lblVelocidad = new javax.swing.JLabel();
+        txtVelocidad = new javax.swing.JTextField();
 
         setClosable(true);
         setMaximizable(true);
@@ -88,7 +92,10 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         );
         pndImagenLayout.setVerticalGroup(
             pndImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pndImagenLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         lblNombre.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
@@ -104,9 +111,6 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         lblAlcance.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
         lblAlcance.setText("Alcance");
 
-        lblRadio.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
-        lblRadio.setText("Radio");
-
         lblDano.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
         lblDano.setText("Daño");
 
@@ -118,9 +122,6 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
 
         lblCosto.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
         lblCosto.setText("Costo");
-
-        lblTiempo.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
-        lblTiempo.setText("Tiempo en Arena");
 
         spr1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -134,12 +135,6 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
 
         lblRuta.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
         lblRuta.setText("Ruta de Imagen");
-
-        lblVelocidad.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
-        lblVelocidad.setText("Velocidad de Movimiento");
-
-        lblDuracion.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
-        lblDuracion.setText("Duración");
 
         txtRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,85 +156,164 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         lblTitulo.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 24)); // NOI18N
         lblTitulo.setText("Registro de Cartas");
 
+        lblTiempo.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
+        lblTiempo.setText("Tiempo en Arena");
+
+        javax.swing.GroupLayout pndEstructurasLayout = new javax.swing.GroupLayout(pndEstructuras);
+        pndEstructuras.setLayout(pndEstructurasLayout);
+        pndEstructurasLayout.setHorizontalGroup(
+            pndEstructurasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pndEstructurasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTiempo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        pndEstructurasLayout.setVerticalGroup(
+            pndEstructurasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pndEstructurasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pndEstructurasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTiempo)
+                    .addComponent(txtTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        btnMas.setText("Más");
+
+        lblDuracion.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
+        lblDuracion.setText("Duración");
+
+        lblRadio.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
+        lblRadio.setText("Radio");
+
+        javax.swing.GroupLayout pndHechizoLayout = new javax.swing.GroupLayout(pndHechizo);
+        pndHechizo.setLayout(pndHechizoLayout);
+        pndHechizoLayout.setHorizontalGroup(
+            pndHechizoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pndHechizoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pndHechizoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDuracion)
+                    .addComponent(lblRadio))
+                .addGap(38, 38, 38)
+                .addGroup(pndHechizoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtRadio)
+                    .addComponent(txtDuracion)))
+        );
+        pndHechizoLayout.setVerticalGroup(
+            pndHechizoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pndHechizoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pndHechizoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDuracion)
+                    .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pndHechizoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRadio)
+                    .addComponent(txtRadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        lblVelocidad.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
+        lblVelocidad.setText("Velocidad de Movimiento");
+
+        javax.swing.GroupLayout pndTropaLayout = new javax.swing.GroupLayout(pndTropa);
+        pndTropa.setLayout(pndTropaLayout);
+        pndTropaLayout.setHorizontalGroup(
+            pndTropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pndTropaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblVelocidad)
+                .addGap(45, 45, 45)
+                .addComponent(txtVelocidad))
+        );
+        pndTropaLayout.setVerticalGroup(
+            pndTropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pndTropaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pndTropaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblVelocidad)
+                    .addComponent(txtVelocidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout pndFondoRegCartaLayout = new javax.swing.GroupLayout(pndFondoRegCarta);
         pndFondoRegCarta.setLayout(pndFondoRegCartaLayout);
         pndFondoRegCartaLayout.setHorizontalGroup(
             pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
+                        .addComponent(lblDesc)
+                        .addGap(53, 53, 53)
+                        .addComponent(jScrollPane1)
+                        .addGap(18, 18, 18))
+                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
+                        .addGap(203, 203, 203)
+                        .addComponent(btnRegistrarCarta, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(332, 332, 332))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pndFondoRegCartaLayout.createSequentialGroup()
+                        .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pndHechizo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pndEstructuras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pndTropa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnMas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(50, 50, 50))
+                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
                         .addComponent(btnSubirImagen)
                         .addGap(18, 18, 18)
                         .addComponent(lblRuta)
                         .addGap(52, 52, 52)
-                        .addComponent(txtRuta))
+                        .addComponent(txtRuta)
+                        .addContainerGap())
                     .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                        .addComponent(lblDesc)
-                        .addGap(52, 52, 52)
-                        .addComponent(jScrollPane1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pndFondoRegCartaLayout.createSequentialGroup()
                         .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(lblTitulo))
                             .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                                        .addComponent(lblVelocidad)
-                                        .addGap(52, 52, 52)
-                                        .addComponent(txtsVelocidad))
-                                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                                        .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblObjs)
-                                            .addComponent(lblTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(lblNombre)
-                                            .addComponent(lblAlcance)
-                                            .addComponent(lblRadio)
-                                            .addComponent(lblDano)
-                                            .addComponent(lblVida)
-                                            .addComponent(lblCalidad)
-                                            .addComponent(lblCosto))
-                                        .addGap(36, 36, 36)
-                                        .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtNombre)
-                                            .addComponent(cmbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(cmbAlcance, javax.swing.GroupLayout.Alignment.TRAILING, 0, 426, Short.MAX_VALUE)
-                                            .addComponent(cmbObjs, javax.swing.GroupLayout.Alignment.TRAILING, 0, 426, Short.MAX_VALUE)
-                                            .addComponent(txtsDano)
-                                            .addComponent(txtsVida, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(cmbCalidad, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txtsCosto, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(txtsRadio, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                                        .addComponent(lblTiempo)
-                                        .addGap(50, 50, 50)
-                                        .addComponent(txtsTiempo))
-                                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                                        .addComponent(lblDuracion)
-                                        .addGap(42, 42, 42)
-                                        .addComponent(txtsDuracion)))
+                                    .addComponent(lblObjs)
+                                    .addComponent(lblTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblNombre)
+                                    .addComponent(lblAlcance)
+                                    .addComponent(lblDano)
+                                    .addComponent(lblVida)
+                                    .addComponent(lblCalidad)
+                                    .addComponent(lblCosto))
+                                .addGap(36, 36, 36)
+                                .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCosto)
+                                    .addComponent(txtNombre)
+                                    .addComponent(cmbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cmbAlcance, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cmbObjs, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cmbCalidad, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtDano, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtVida, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addGap(18, 18, 18)
                                 .addComponent(spr1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(pndImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48))
-            .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                .addGap(221, 221, 221)
-                .addComponent(btnRegistrarCarta, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(pndImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48))))
         );
         pndFondoRegCartaLayout.setVerticalGroup(
             pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTitulo)
                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(pndImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(spr1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pndFondoRegCartaLayout.createSequentialGroup()
+                        .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(spr1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblNombre)
                                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -257,16 +331,12 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                                     .addComponent(cmbAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblRadio)
-                                    .addComponent(txtsRadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblDano)
-                                    .addComponent(txtsDano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtDano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblVida)
-                                    .addComponent(txtsVida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtVida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblCalidad)
@@ -274,26 +344,19 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblCosto)
-                                    .addComponent(txtsCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(20, 20, 20)
-                                .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblTiempo)
-                                    .addComponent(txtsTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtsDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblDuracion))
-                                .addGap(18, 18, 18)
-                                .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblVelocidad)
-                                    .addComponent(txtsVelocidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addComponent(pndImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(18, 18, 18)
+                .addComponent(btnMas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pndEstructuras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pndHechizo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pndTropa, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblDesc)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSubirImagen)
@@ -301,7 +364,7 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                     .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnRegistrarCarta)
-                .addGap(15, 15, 15))
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -548,61 +611,95 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         this.txtaDescripcion = txtaDescripcion;
     }
 
-    public JSpinner getTxtsCosto() {
-        return txtsCosto;
+    public JTextField getTxtCosto() {
+        return txtCosto;
     }
 
-    public void setTxtsCosto(JSpinner txtsCosto) {
-        this.txtsCosto = txtsCosto;
+    public void setTxtCosto(JTextField txtCosto) {
+        this.txtCosto = txtCosto;
     }
 
-    public JSpinner getTxtsDano() {
-        return txtsDano;
+    public JTextField getTxtDano() {
+        return txtDano;
     }
 
-    public void setTxtsDano(JSpinner txtsDano) {
-        this.txtsDano = txtsDano;
+    public void setTxtDano(JTextField txtDano) {
+        this.txtDano = txtDano;
     }
 
-    public JSpinner getTxtsDuracion() {
-        return txtsDuracion;
+    public JTextField getTxtDuracion() {
+        return txtDuracion;
     }
 
-    public void setTxtsDuracion(JSpinner txtsDuracion) {
-        this.txtsDuracion = txtsDuracion;
+    public void setTxtDuracion(JTextField txtDuracion) {
+        this.txtDuracion = txtDuracion;
     }
 
-    public JSpinner getTxtsRadio() {
-        return txtsRadio;
+    public JTextField getTxtRadio() {
+        return txtRadio;
     }
 
-    public void setTxtsRadio(JSpinner txtsRadio) {
-        this.txtsRadio = txtsRadio;
+    public void setTxtRadio(JTextField txtRadio) {
+        this.txtRadio = txtRadio;
     }
 
-    public JSpinner getTxtsTiempo() {
-        return txtsTiempo;
+    public JTextField getTxtTiempo() {
+        return txtTiempo;
     }
 
-    public void setTxtsTiempo(JSpinner txtsTiempo) {
-        this.txtsTiempo = txtsTiempo;
+    public void setTxtTiempo(JTextField txtTiempo) {
+        this.txtTiempo = txtTiempo;
     }
 
-    public JSpinner getTxtsVelocidad() {
-        return txtsVelocidad;
+    public JTextField getTxtVelocidad() {
+        return txtVelocidad;
     }
 
-    public void setTxtsVelocidad(JSpinner txtsVelocidad) {
-        this.txtsVelocidad = txtsVelocidad;
+    public void setTxtVelocidad(JTextField txtVelocidad) {
+        this.txtVelocidad = txtVelocidad;
     }
 
-    public JSpinner getTxtsVida() {
-        return txtsVida;
+    public JTextField getTxtVida() {
+        return txtVida;
     }
 
-    public void setTxtsVida(JSpinner txtsVida) {
-        this.txtsVida = txtsVida;
+    public void setTxtVida(JTextField txtVida) {
+        this.txtVida = txtVida;
     }
+
+    public JButton getBtnMas() {
+        return btnMas;
+    }
+
+    public void setBtnMas(JButton btnMas) {
+        this.btnMas = btnMas;
+    }
+
+    public JPanel getPndEstructuras() {
+        return pndEstructuras;
+    }
+
+    public void setPndEstructuras(JPanel pndEstructuras) {
+        this.pndEstructuras = pndEstructuras;
+    }
+
+    public JPanel getPndHechizo() {
+        return pndHechizo;
+    }
+
+    public void setPndHechizo(JPanel pndHechizo) {
+        this.pndHechizo = pndHechizo;
+    }
+
+    public JPanel getPndTropa() {
+        return pndTropa;
+    }
+
+    public void setPndTropa(JPanel pndTropa) {
+        this.pndTropa = pndTropa;
+    }
+
+    
 
     public JLabel getLblIcon() {
         return lblIcon;
@@ -615,6 +712,7 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnMas;
     private javax.swing.JButton btnRegistrarCarta;
     private javax.swing.JButton btnSubirImagen;
     private javax.swing.JComboBox<String> cmbAlcance;
@@ -638,18 +736,21 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblVelocidad;
     private javax.swing.JLabel lblVida;
+    private javax.swing.JPanel pndEstructuras;
     private javax.swing.JPanel pndFondoRegCarta;
+    private javax.swing.JPanel pndHechizo;
     private javax.swing.JPanel pndImagen;
+    private javax.swing.JPanel pndTropa;
     private javax.swing.JSeparator spr1;
+    private javax.swing.JTextField txtCosto;
+    private javax.swing.JTextField txtDano;
+    private javax.swing.JTextField txtDuracion;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtRadio;
     private javax.swing.JTextField txtRuta;
+    private javax.swing.JTextField txtTiempo;
+    private javax.swing.JTextField txtVelocidad;
+    private javax.swing.JTextField txtVida;
     private javax.swing.JTextArea txtaDescripcion;
-    private javax.swing.JSpinner txtsCosto;
-    private javax.swing.JSpinner txtsDano;
-    private javax.swing.JSpinner txtsDuracion;
-    private javax.swing.JSpinner txtsRadio;
-    private javax.swing.JSpinner txtsTiempo;
-    private javax.swing.JSpinner txtsVelocidad;
-    private javax.swing.JSpinner txtsVida;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,10 +10,10 @@ package modelo;
  * @author Sergio Cruz
  */
 public abstract class Carta {
-    protected String objetivos, nombre, alcance, calidad, costo, ruta;
-    protected int dano, vida;
+    protected String objetivos, nombre, alcance, calidad, ruta;
+    protected int dano, vida, costo;
 
-    public Carta(String objetivos, String nombre, String alcance, String calidad, String costo, String ruta, int dano, int vida) {
+    public Carta(String objetivos, String nombre, String alcance, String calidad, int costo, String ruta, int dano, int vida) {
         this.objetivos = objetivos;
         this.nombre = nombre;
         this.alcance = alcance;
@@ -29,7 +29,7 @@ public abstract class Carta {
         this.nombre = "";
         this.alcance = "";
         this.calidad = "";
-        this.costo = "";
+        this.costo = 0;
         this.ruta = "";
         this.dano = 0;
         this.vida = 0;
@@ -67,11 +67,11 @@ public abstract class Carta {
         this.calidad = calidad;
     }
 
-    public String getCosto() {
+    public int getCosto() {
         return costo;
     }
 
-    public void setCosto(String costo) {
+    public void setCosto(int costo) {
         this.costo = costo;
     }
 
