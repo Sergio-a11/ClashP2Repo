@@ -41,18 +41,13 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         pndImagen = new javax.swing.JPanel();
         lblIcon = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
-        lblObjs = new javax.swing.JLabel();
         lblTipo = new javax.swing.JLabel();
-        lblAlcance = new javax.swing.JLabel();
         lblDano = new javax.swing.JLabel();
-        lblVida = new javax.swing.JLabel();
         lblCalidad = new javax.swing.JLabel();
         lblCosto = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         spr1 = new javax.swing.JSeparator();
         cmbTipo = new javax.swing.JComboBox<>();
-        cmbAlcance = new javax.swing.JComboBox<>();
-        cmbObjs = new javax.swing.JComboBox<>();
         cmbCalidad = new javax.swing.JComboBox<>();
         lblRuta = new javax.swing.JLabel();
         txtRuta = new javax.swing.JTextField();
@@ -63,7 +58,6 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         btnRegistrarCarta = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
         txtDano = new javax.swing.JTextField();
-        txtVida = new javax.swing.JTextField();
         txtCosto = new javax.swing.JTextField();
         pndEstructuras = new javax.swing.JPanel();
         lblTiempo = new javax.swing.JLabel();
@@ -77,6 +71,13 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         pndTropa = new javax.swing.JPanel();
         lblVelocidad = new javax.swing.JLabel();
         txtVelocidad = new javax.swing.JTextField();
+        pndHechizo2 = new javax.swing.JPanel();
+        lblObjs = new javax.swing.JLabel();
+        cmbObjs = new javax.swing.JComboBox<>();
+        lblAlcance = new javax.swing.JLabel();
+        cmbAlcance = new javax.swing.JComboBox<>();
+        lblVida = new javax.swing.JLabel();
+        txtVida = new javax.swing.JTextField();
 
         setClosable(true);
         setMaximizable(true);
@@ -92,30 +93,18 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         );
         pndImagenLayout.setVerticalGroup(
             pndImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pndImagenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(lblIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
         );
 
         lblNombre.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
         lblNombre.setText("Nombre");
 
-        lblObjs.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
-        lblObjs.setText("Objetivos");
-
         lblTipo.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
         lblTipo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTipo.setText("Tipo");
 
-        lblAlcance.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
-        lblAlcance.setText("Alcance");
-
         lblDano.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
         lblDano.setText("Daño");
-
-        lblVida.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
-        lblVida.setText("Vida");
 
         lblCalidad.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
         lblCalidad.setText("Calidad");
@@ -126,10 +115,6 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         spr1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estructura", "Hechizo", "Tropa" }));
-
-        cmbAlcance.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cuerpo a Cuerpo", "Corto", "Medio", "Largo", "Muy Largo", " ", " ", " " }));
-
-        cmbObjs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aire", "Estructuras", "Tierra", "Tierra y Aire", "Torre de Coronas" }));
 
         cmbCalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Común", "Especial", "Épica", "Legendaria" }));
 
@@ -167,7 +152,7 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(lblTiempo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pndEstructurasLayout.setVerticalGroup(
             pndEstructurasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,6 +223,58 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        lblObjs.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
+        lblObjs.setText("Objetivos");
+
+        cmbObjs.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aire", "Estructuras", "Tierra", "Tierra y Aire", "Torre de Coronas" }));
+        cmbObjs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbObjsActionPerformed(evt);
+            }
+        });
+
+        lblAlcance.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
+        lblAlcance.setText("Alcance");
+
+        cmbAlcance.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cuerpo a Cuerpo", "Corto", "Medio", "Largo", "Muy Largo", " ", " ", " " }));
+
+        lblVida.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
+        lblVida.setText("Vida");
+
+        javax.swing.GroupLayout pndHechizo2Layout = new javax.swing.GroupLayout(pndHechizo2);
+        pndHechizo2.setLayout(pndHechizo2Layout);
+        pndHechizo2Layout.setHorizontalGroup(
+            pndHechizo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pndHechizo2Layout.createSequentialGroup()
+                .addGroup(pndHechizo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAlcance)
+                    .addComponent(lblObjs)
+                    .addComponent(lblVida))
+                .addGap(36, 36, 36)
+                .addGroup(pndHechizo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cmbObjs, 0, 459, Short.MAX_VALUE)
+                    .addComponent(cmbAlcance, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtVida))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pndHechizo2Layout.setVerticalGroup(
+            pndHechizo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pndHechizo2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pndHechizo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblObjs)
+                    .addComponent(cmbObjs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pndHechizo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAlcance))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pndHechizo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtVida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblVida))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout pndFondoRegCartaLayout = new javax.swing.GroupLayout(pndFondoRegCarta);
         pndFondoRegCarta.setLayout(pndFondoRegCartaLayout);
         pndFondoRegCartaLayout.setHorizontalGroup(
@@ -257,9 +294,9 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pndFondoRegCartaLayout.createSequentialGroup()
                         .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pndHechizo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pndEstructuras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(pndTropa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnMas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnMas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pndEstructuras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(50, 50, 50))
                     .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
                         .addGap(13, 13, 13)
@@ -276,25 +313,24 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                                 .addComponent(lblTitulo))
                             .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblObjs)
-                                    .addComponent(lblTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblNombre)
-                                    .addComponent(lblAlcance)
-                                    .addComponent(lblDano)
-                                    .addComponent(lblVida)
-                                    .addComponent(lblCalidad)
-                                    .addComponent(lblCosto))
-                                .addGap(36, 36, 36)
-                                .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCosto)
-                                    .addComponent(txtNombre)
-                                    .addComponent(cmbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cmbAlcance, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cmbObjs, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cmbCalidad, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtDano, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtVida, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(18, 18, 18)
+                                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
+                                        .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblNombre)
+                                            .addComponent(lblDano)
+                                            .addComponent(lblCalidad)
+                                            .addComponent(lblCosto))
+                                        .addGap(44, 44, 44)
+                                        .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtNombre)
+                                            .addComponent(cmbTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(cmbCalidad, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtDano, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(txtCosto))
+                                        .addGap(18, 18, 18))
+                                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
+                                        .addComponent(pndHechizo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addComponent(spr1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(pndImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -303,13 +339,10 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         pndFondoRegCartaLayout.setVerticalGroup(
             pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTitulo)
                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(pndImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblTitulo)
                         .addGap(18, 18, 18)
                         .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(spr1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -317,35 +350,28 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblNombre)
                                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblTipo)
                                     .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblObjs)
-                                    .addComponent(cmbObjs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblAlcance)
-                                    .addComponent(cmbAlcance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblDano)
                                     .addComponent(txtDano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblVida)
-                                    .addComponent(txtVida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblCalidad)
                                     .addComponent(cmbCalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblCosto)
-                                    .addComponent(txtCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(18, 18, 18)
+                                    .addComponent(txtCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(pndHechizo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(pndImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnMas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pndEstructuras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -386,6 +412,10 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
     private void txtRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRutaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRutaActionPerformed
+
+    private void cmbObjsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbObjsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbObjsActionPerformed
 
     public JButton getBtnRegistrarCarta() {
         return btnRegistrarCarta;
@@ -699,6 +729,14 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         this.pndTropa = pndTropa;
     }
 
+    public JPanel getPndHechizo2() {
+        return pndHechizo2;
+    }
+
+    public void setPndHechizo2(JPanel pndHechizo2) {
+        this.pndHechizo2 = pndHechizo2;
+    }
+
     
 
     public JLabel getLblIcon() {
@@ -739,6 +777,7 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
     private javax.swing.JPanel pndEstructuras;
     private javax.swing.JPanel pndFondoRegCarta;
     private javax.swing.JPanel pndHechizo;
+    private javax.swing.JPanel pndHechizo2;
     private javax.swing.JPanel pndImagen;
     private javax.swing.JPanel pndTropa;
     private javax.swing.JSeparator spr1;

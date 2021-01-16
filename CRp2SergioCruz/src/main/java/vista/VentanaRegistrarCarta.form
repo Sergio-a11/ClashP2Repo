@@ -59,9 +59,9 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="pndHechizo" max="32767" attributes="0"/>
-                              <Component id="pndEstructuras" alignment="1" max="32767" attributes="0"/>
                               <Component id="pndTropa" max="32767" attributes="0"/>
                               <Component id="btnMas" alignment="1" max="32767" attributes="0"/>
+                              <Component id="pndEstructuras" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
@@ -80,29 +80,31 @@
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblObjs" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblTipo" min="-2" pref="79" max="-2" attributes="0"/>
-                                      <Component id="lblNombre" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblAlcance" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblDano" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblVida" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblCalidad" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblCosto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblTipo" min="-2" pref="79" max="-2" attributes="0"/>
+                                              <Component id="lblNombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblDano" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblCalidad" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblCosto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtNombre" max="32767" attributes="0"/>
+                                              <Component id="cmbTipo" max="32767" attributes="0"/>
+                                              <Component id="cmbCalidad" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtDano" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtCosto" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="pndHechizo2" max="32767" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtCosto" max="32767" attributes="0"/>
-                                      <Component id="txtNombre" max="32767" attributes="0"/>
-                                      <Component id="cmbTipo" max="32767" attributes="0"/>
-                                      <Component id="cmbAlcance" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="cmbObjs" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="cmbCalidad" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="txtDano" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="txtVida" alignment="1" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Component id="spr1" min="-2" pref="19" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -117,14 +119,10 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="pndImagen" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="spr1" min="-2" pref="338" max="-2" attributes="0"/>
@@ -133,46 +131,37 @@
                                       <Component id="lblNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblTipo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="cmbTipo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblObjs" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cmbObjs" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblAlcance" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cmbAlcance" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblDano" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtDano" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblVida" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtVida" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblCalidad" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="cmbCalidad" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="lblCosto" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtCosto" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="pndHechizo2" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="pndImagen" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnMas" min="-2" pref="32" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="pndEstructuras" min="-2" max="-2" attributes="0"/>
@@ -216,11 +205,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="lblIcon" min="-2" pref="250" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="lblIcon" alignment="0" pref="262" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -237,14 +222,6 @@
             <Property name="text" type="java.lang.String" value="Nombre"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblObjs">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Objetivos"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="lblTipo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -254,28 +231,12 @@
             <Property name="text" type="java.lang.String" value="Tipo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblAlcance">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Alcance"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="lblDano">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Da&#xf1;o"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblVida">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Vida"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCalidad">
@@ -308,41 +269,6 @@
                 <StringItem index="0" value="Estructura"/>
                 <StringItem index="1" value="Hechizo"/>
                 <StringItem index="2" value="Tropa"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="cmbAlcance">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="8">
-                <StringItem index="0" value="Cuerpo a Cuerpo"/>
-                <StringItem index="1" value="Corto"/>
-                <StringItem index="2" value="Medio"/>
-                <StringItem index="3" value="Largo"/>
-                <StringItem index="4" value="Muy Largo"/>
-                <StringItem index="5" value=" "/>
-                <StringItem index="6" value=" "/>
-                <StringItem index="7" value=" "/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="cmbObjs">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="Aire"/>
-                <StringItem index="1" value="Estructuras"/>
-                <StringItem index="2" value="Tierra"/>
-                <StringItem index="3" value="Tierra y Aire"/>
-                <StringItem index="4" value="Torre de Coronas"/>
               </StringArray>
             </Property>
           </Properties>
@@ -421,8 +347,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtDano">
         </Component>
-        <Component class="javax.swing.JTextField" name="txtVida">
-        </Component>
         <Component class="javax.swing.JTextField" name="txtCosto">
         </Component>
         <Container class="javax.swing.JPanel" name="pndEstructuras">
@@ -431,17 +355,17 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="lblTiempo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="txtTiempo" min="-2" pref="355" max="-2" attributes="0"/>
+                      <Component id="txtTiempo" min="-2" pref="665" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblTiempo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtTiempo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -565,6 +489,117 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtVelocidad">
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="pndHechizo2">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblAlcance" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblObjs" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblVida" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="cmbObjs" pref="459" max="32767" attributes="0"/>
+                          <Component id="cmbAlcance" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtVida" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblObjs" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmbObjs" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cmbAlcance" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAlcance" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtVida" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblVida" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblObjs">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Objetivos"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cmbObjs">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="5">
+                    <StringItem index="0" value="Aire"/>
+                    <StringItem index="1" value="Estructuras"/>
+                    <StringItem index="2" value="Tierra"/>
+                    <StringItem index="3" value="Tierra y Aire"/>
+                    <StringItem index="4" value="Torre de Coronas"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbObjsActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblAlcance">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Alcance"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cmbAlcance">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="8">
+                    <StringItem index="0" value="Cuerpo a Cuerpo"/>
+                    <StringItem index="1" value="Corto"/>
+                    <StringItem index="2" value="Medio"/>
+                    <StringItem index="3" value="Largo"/>
+                    <StringItem index="4" value="Muy Largo"/>
+                    <StringItem index="5" value=" "/>
+                    <StringItem index="6" value=" "/>
+                    <StringItem index="7" value=" "/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblVida">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Vida"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtVida">
             </Component>
           </SubComponents>
         </Container>

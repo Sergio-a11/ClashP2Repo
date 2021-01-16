@@ -65,20 +65,26 @@ public class Controlador implements ActionListener{
         }
         if(ae.getSource() == frmRC.getBtnMas())
         {
+            frmRC.getPndEstructuras().setVisible(false);
+            frmRC.getPndHechizo().setVisible(false);
+            frmRC.getPndTropa().setVisible(false);
             switch(frmRC.getCmbTipo().getSelectedIndex())
             {
                 case 0:
                 {
+                    frmRC.getPndHechizo2().setVisible(true);
                     frmRC.getPndEstructuras().setVisible(true);
                     break;
                 }
                 case 1:
                 {
                     frmRC.getPndHechizo().setVisible(true);
+                    frmRC.getPndHechizo2().setVisible(false);
                     break;
                 }
                 case 2:
                 {
+                    frmRC.getPndHechizo2().setVisible(true);
                     frmRC.getPndTropa().setVisible(true);
                     break;
                 }
@@ -108,10 +114,7 @@ public class Controlador implements ActionListener{
                 {
                     Hechizo hez = new Hechizo();
                     hez.setNombre(frmRC.getTxtNombre().getText());
-                    hez.setObjetivos(frmRC.getCmbObjs().getName());
-                    hez.setAlcance(frmRC.getCmbAlcance().getName());
                     hez.setDano(Integer.parseInt(frmRC.getTxtDano().getText()));
-                    hez.setVida(Integer.parseInt(frmRC.getTxtVida().getText()));
                     hez.setCosto(Integer.parseInt(frmRC.getTxtCosto().getText()));
                     hez.setCalidad(frmRC.getCmbCalidad().getName());
                     hez.setRadio(Integer.parseInt(frmRC.getTxtRadio().getText()));
