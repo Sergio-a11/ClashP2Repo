@@ -37,6 +37,8 @@ public class ConsultarCarta extends javax.swing.JInternalFrame {
         txtaBetaConsulta = new javax.swing.JTextArea();
         btnConsultar = new javax.swing.JButton();
 
+        setClosable(true);
+
         pndMostrarImagen.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout pndMostrarImagenLayout = new javax.swing.GroupLayout(pndMostrarImagen);

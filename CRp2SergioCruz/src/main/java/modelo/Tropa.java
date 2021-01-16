@@ -33,6 +33,7 @@ public class Tropa extends Carta {
     }
 
     public void setVelocidadMovimineto(String velocidadMovimineto) {
+        
         this.velocidadMovimineto = velocidadMovimineto;
     }
 

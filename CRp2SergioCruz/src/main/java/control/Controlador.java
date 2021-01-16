@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -99,55 +101,141 @@ public class Controlador implements ActionListener{
                 case 0:
                 {
                     Estructura est = new Estructura();
-                    est.setNombre(frmRC.getTxtNombre().getText());
-                    est.setObjetivos(frmRC.getCmbObjs().getName());
-                    est.setAlcance(frmRC.getCmbAlcance().getName());
-                    est.setDano(Integer.parseInt(frmRC.getTxtDano().getText()));
-                    est.setVida(Integer.parseInt(frmRC.getTxtVida().getText()));
-                    est.setCosto(Integer.parseInt(frmRC.getTxtCosto().getText()));
-                    est.setCalidad(frmRC.getCmbCalidad().getName());
-                    est.setTiempoEnBatalla(Integer.parseInt(frmRC.getTxtTiempo().getText()));
+                    
+                    try
+                    {
+                        est.setNombre(frmRC.getTxtNombre().getText());
+                    } 
+                    catch(FormatoEntradaExcepcion ex) {
+                        JOptionPane.showMessageDialog(frmP, ex.toString() + "(nombre)");
+                        flag = true;
+                    }
+                    
+                    est.setObjetivos(String.valueOf(frmRC.getCmbObjs().getSelectedItem()));
+                    est.setAlcance(String.valueOf(frmRC.getCmbAlcance().getSelectedItem()));
+                    est.setCalidad(String.valueOf(frmRC.getCmbCalidad().getSelectedItem()));
+                    
+                    try
+                    {
+                        est.setDano(Integer.parseInt(frmRC.getTxtDano().getText()));
+                        est.setVida(Integer.parseInt(frmRC.getTxtVida().getText()));
+                        est.setCosto(Integer.parseInt(frmRC.getTxtCosto().getText()));
+                        est.setTiempoEnBatalla(Integer.parseInt(frmRC.getTxtTiempo().getText()));
+                    }
+                    catch(NumberFormatException ex)
+                    {
+                        String mensaje[] = ex.getMessage().split(":");
+                        JOptionPane.showMessageDialog(frmP, "Error, se han introducido valores NO númericos " + mensaje[1]);
+                        flag = true;
+                    }
+                    
                     carta = est;
                     break;
                 }
                 case 1:
                 {
                     Hechizo hez = new Hechizo();
-                    hez.setNombre(frmRC.getTxtNombre().getText());
-                    hez.setDano(Integer.parseInt(frmRC.getTxtDano().getText()));
-                    hez.setCosto(Integer.parseInt(frmRC.getTxtCosto().getText()));
-                    hez.setCalidad(frmRC.getCmbCalidad().getName());
-                    hez.setRadio(Integer.parseInt(frmRC.getTxtRadio().getText()));
-                    hez.setDuracion(Integer.parseInt(frmRC.getTxtDuracion().getText()));
+                    
+                    try 
+                    {
+                        hez.setNombre(frmRC.getTxtNombre().getText());
+                    }
+                    catch(FormatoEntradaExcepcion ex) {
+                        JOptionPane.showMessageDialog(frmP, ex.toString());
+                        flag = true;
+                    }
+                    
+                    hez.setCalidad(String.valueOf(frmRC.getCmbCalidad().getSelectedItem()));
+                    
+                    try
+                    {
+                        hez.setDano(Integer.parseInt(frmRC.getTxtDano().getText()));
+                        hez.setCosto(Integer.parseInt(frmRC.getTxtCosto().getText()));
+                        hez.setRadio(Integer.parseInt(frmRC.getTxtRadio().getText()));
+                        hez.setDuracion(Integer.parseInt(frmRC.getTxtDuracion().getText()));
+                        flag = true;
+                    }
+                    catch(NumberFormatException ex)
+                    {
+                        String mensaje[] = ex.toString().split(":");
+                        JOptionPane.showMessageDialog(frmP, "Error, se han introducido valores NO númericos " + mensaje[1]);
+                        flag = true;
+                    }
+                    
                     carta = hez;
                     break;
                 }
                 case 2:
                 {
                     Tropa tro = new Tropa();
-                    tro.setNombre(frmRC.getTxtNombre().getText());
-                    tro.setObjetivos(frmRC.getCmbObjs().getName());
-                    tro.setAlcance(frmRC.getCmbAlcance().getName());
-                    tro.setDano(Integer.parseInt(frmRC.getTxtDano().getText()));
-                    tro.setVida(Integer.parseInt(frmRC.getTxtVida().getText()));
-                    tro.setCosto(Integer.parseInt(frmRC.getTxtCosto().getText()));
-                    tro.setCalidad(frmRC.getCmbCalidad().getName());
-                    tro.setVelocidadMovimineto(frmRC.getTxtVelocidad().getText());
+                    
+                    try
+                    {
+                        tro.setNombre(frmRC.getTxtNombre().getText());
+                    }
+                    catch(FormatoEntradaExcepcion ex) {
+                        JOptionPane.showMessageDialog(frmP, ex.toString());
+                        flag = true;
+                    }
+                    
+                    tro.setObjetivos(String.valueOf(frmRC.getCmbObjs().getSelectedItem()));
+                    tro.setAlcance(String.valueOf(frmRC.getCmbAlcance().getSelectedItem()));
+                    tro.setCalidad(String.valueOf(frmRC.getCmbCalidad().getSelectedItem()));
+                    tro.setVelocidadMovimineto(String.valueOf(frmRC.getCmbVelocidad().getSelectedItem()));
+                    
+                    try
+                    {
+                        tro.setDano(Integer.parseInt(frmRC.getTxtDano().getText()));
+                        tro.setVida(Integer.parseInt(frmRC.getTxtVida().getText()));
+                        tro.setCosto(Integer.parseInt(frmRC.getTxtCosto().getText()));
+                    }
+                    catch(NumberFormatException ex)
+                    {
+                        String mensaje[] = ex.toString().split(":");
+                        JOptionPane.showMessageDialog(frmP, "Error, se han introducido valores NO númericos " + mensaje[1]);
+                        flag = true;
+                    }
+                    carta = tro;
+                    break;
                 }
             }
             
             //if(flag == false)
             if(ruta != null)
             {
-                carta.setRuta(ruta);
+                try {
+                    carta.setRuta(ruta);
+                } catch (FormatoEntradaExcepcion ex) {
+                    JOptionPane.showMessageDialog(frmP, ex.toString());
+                }
                 ruta = null;
             }
             else
             {
                 JOptionPane.showMessageDialog(frmP, "No se ha seleccionado una imagen");
             }
-                
+            
+            if(flag == false)
+            {
+                JOptionPane.showMessageDialog(frmP, "Carta Registrada");
                 objC.getListaC().add(carta);
+                //limpieza
+                frmRC.getTxtCosto().setText("");
+                frmRC.getTxtDano().setText("");
+                frmRC.getTxtDuracion().setText("");
+                frmRC.getTxtNombre().setText("");
+                frmRC.getTxtRadio().setText("");
+                frmRC.getTxtRuta().setText("");
+                frmRC.getTxtTiempo().setText("");
+                frmRC.getTxtVida().setText("");
+                frmRC.getTxtaDescripcion().setText("");
+                frmRC.getLblIcon().setIcon(null);
+            }
+            if(flag == true)
+            {
+                JOptionPane.showMessageDialog(frmP, "Carta NO registrada");
+                flag = false;
+            }
             
         }
         if(ae.getSource() == frmRC.getBtnSubirImagen())

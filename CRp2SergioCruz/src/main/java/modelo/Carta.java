@@ -5,6 +5,9 @@
  */
 package modelo;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author Sergio Cruz
@@ -47,8 +50,21 @@ public abstract class Carta {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String nombre) throws FormatoEntradaExcepcion {
+        Pattern pat =Pattern.compile("[1-9]");
+        Matcher mat = pat.matcher(nombre);
+        if(nombre.equals(""))
+        {
+            throw new FormatoEntradaExcepcion(101);
+        }
+        else if(mat.find())
+        {
+            throw new FormatoEntradaExcepcion(102);
+        }
+        else
+        {
+            this.nombre = nombre;
+        }
     }
 
     public String getAlcance() {
@@ -79,8 +95,15 @@ public abstract class Carta {
         return ruta;
     }
 
-    public void setRuta(String ruta) {
-        this.ruta = ruta;
+    public void setRuta(String ruta) throws FormatoEntradaExcepcion {
+        if(ruta.equals(""))
+        {
+            throw new FormatoEntradaExcepcion(101);
+        }
+        else
+        {
+            this.ruta = ruta;
+        }
     }
 
     public int getDano() {
