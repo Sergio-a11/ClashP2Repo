@@ -10,14 +10,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
 import java.io.File;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
 import modelo.*;
 import vista.*;
 /**
@@ -63,7 +67,12 @@ public class Controlador implements ActionListener{
         if(ae.getSource() == frmP.getOpcmConsultarCarta())
         {
             abrirVentana(frmCC);
-            //convertir en tabla??
+            try {
+                agregarDatos(frmCC.getTablaCatas());
+                //convertir en tabla??
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(frmP, "Error al abrir el archivo");
+            }
         }
         if(ae.getSource() == frmRC.getBtnMas())
         {
@@ -153,7 +162,6 @@ public class Controlador implements ActionListener{
                         hez.setCosto(Integer.parseInt(frmRC.getTxtCosto().getText()));
                         hez.setRadio(Integer.parseInt(frmRC.getTxtRadio().getText()));
                         hez.setDuracion(Integer.parseInt(frmRC.getTxtDuracion().getText()));
-                        flag = true;
                     }
                     catch(NumberFormatException ex)
                     {
@@ -307,4 +315,38 @@ public class Controlador implements ActionListener{
         frmRC.getPndHechizo().setVisible(false);
         frmRC.getPndTropa().setVisible(false);
     }
+    
+    public void agregarDatos(JTable tabla) throws IOException
+    {
+        String fig = "";
+        DefaultTableModel plantilla = (DefaultTableModel) tabla.getModel();
+        plantilla.setRowCount(0);
+        for(int i=0; i<objC.getListaC().size(); i++)
+        {
+            fig = objC.getListaC().get(i).getRuta();
+            Object datos[] = {"hez",objC.getListaC().get(i).getNombre(),
+              objC.getListaC().get(i).getObjetivos(),
+              objC.getListaC().get(i).getAlcance(),
+              String.valueOf(objC.getListaC().get(i).getDano()),
+              String.valueOf(objC.getListaC().get(i).getVida()),
+              objC.getListaC().get(i).getCalidad(),
+              String.valueOf(objC.getListaC().get(i).getCosto()),
+              "bn", "listo", "dn", fig};
+            plantilla.addRow(datos);
+        }
+    }
+    
+    /*public String datos(int i)
+    {
+        String msj = "";
+        msj = objC.getListaC().get(i).getNombre() + ";" +
+              objC.getListaC().get(i).getObjetivos() + ";" +
+              objC.getListaC().get(i).getAlcance() + ";" +
+              String.valueOf(objC.getListaC().get(i).getDano()) + ";" +
+              String.valueOf(objC.getListaC().get(i).getVida()) + ";" +
+              objC.getListaC().get(i).getCalidad() + ";" +
+              String.valueOf(objC.getListaC().get(i).getCosto()) + ";" +
+              String.valueOf(objC.getListaC().get(i).get()) + ";" +;
+        return msj;
+    }*/
 }

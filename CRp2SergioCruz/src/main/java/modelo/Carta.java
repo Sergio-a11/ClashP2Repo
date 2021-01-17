@@ -5,8 +5,16 @@
  */
 package modelo;
 
+import java.awt.Image;
+import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import vista.SubirImagen;
 
 /**
  *
@@ -126,6 +134,27 @@ public abstract class Carta {
     public String toString() {
         return "Carta{" + "objetivos=" + objetivos + ", nombre=" + nombre + ", alcance=" + alcance + ", calidad=" + calidad + ", costo=" + costo + ", ruta=" + ruta + ", dano=" + dano + ", vida=" + vida + '}';
     }
+    
+    /*public Icon imagen(String ruta)
+    {
+        File archivo; //imagen a mostrar
+            
+                try
+                {
+                    ImageIcon ImgIcon = new ImageIcon(archivo.toString());//archivo en forma de texto
+                    Icon icono = new ImageIcon(ImgIcon.getImage().getScaledInstance(frmRC.getPndImagen().getWidth(),frmRC.getPndImagen().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+                    frmRC.getLblIcon().setIcon(icono);//se establece la imagen en el label
+                }
+                catch(Exception e)
+                {
+                    JOptionPane.showMessageDialog(frmP,"Error al abrir" + e);
+                }
+                
+            
+            //aignar ruta de la imagen a la cartacarta.setRuta(frmRC.getTxtRuta().getText());
+            ruta = frmRC.getTxtRuta().getText();
+            //objC.getListaC().get(objC.getListaC().size()-1).setRuta(frmRC.getTxtRuta().getText());
+    }*/
     
     public abstract String Utilidad();
 }
