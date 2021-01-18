@@ -35,8 +35,9 @@ public class Controlador implements ActionListener{
     ConsultarCarta frmCC;
     Cartas objC;
     String ruta;
+    Conexion con;
 
-    public Controlador() {
+    public Controlador() throws IOException {
         this.frmP = new VentanaPrincipal();
         this.frmRC = new VentanaRegistrarCarta();
         this.buscador = new SubirImagen();
@@ -56,6 +57,7 @@ public class Controlador implements ActionListener{
         this.frmCC.getBtnConsultar().addActionListener(this);
         this.frmRC.getBtnMas().addActionListener(this);
         this.ruta = "";
+        this.con = new Conexion();
     }
 
     @Override
@@ -227,6 +229,12 @@ public class Controlador implements ActionListener{
             {
                 JOptionPane.showMessageDialog(frmP, "Carta Registrada");
                 objC.getListaC().add(carta);
+                String msj = datos(objC.getListaC().size()-1);
+                try {
+                    con.EscribeDatos(msj, "Cartas.txt");
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(frmCC, "Error al abrir el archivo");
+                }
                 //limpieza
                 frmRC.getTxtCosto().setText("");
                 frmRC.getTxtDano().setText("");
@@ -336,17 +344,45 @@ public class Controlador implements ActionListener{
         }
     }
     
-    /*public String datos(int i)
+    public String datos(int i)
     {
         String msj = "";
-        msj = objC.getListaC().get(i).getNombre() + ";" +
+        if(objC.getListaC().get(i) instanceof Estructura)
+        {
+            Estructura es = (Estructura) objC.getListaC().get(i);
+            msj = "Estructura;" + objC.getListaC().get(i).getNombre() + ";" +
               objC.getListaC().get(i).getObjetivos() + ";" +
               objC.getListaC().get(i).getAlcance() + ";" +
               String.valueOf(objC.getListaC().get(i).getDano()) + ";" +
               String.valueOf(objC.getListaC().get(i).getVida()) + ";" +
               objC.getListaC().get(i).getCalidad() + ";" +
               String.valueOf(objC.getListaC().get(i).getCosto()) + ";" +
-              String.valueOf(objC.getListaC().get(i).get()) + ";" +;
+              String.valueOf(es.getTiempoEnBatalla()) + ";N/A;N/A;" +
+                    objC.getListaC().get(i).getRuta();
+        }
+        if(objC.getListaC().get(i) instanceof Hechizo)
+        {
+            Hechizo he = (Hechizo) objC.getListaC().get(i);
+            msj = "Hechizo;" + objC.getListaC().get(i).getNombre() + ";N/A;N/A;" +
+              String.valueOf(objC.getListaC().get(i).getDano()) + ";N/A;" +
+              objC.getListaC().get(i).getCalidad() + ";" +
+              String.valueOf(objC.getListaC().get(i).getCosto()) + ";N/A;" +
+              String.valueOf(he.getDuracion()) + ";N/A;" +
+                    objC.getListaC().get(i).getRuta();
+        }
+        if(objC.getListaC().get(i) instanceof Tropa)
+        {
+            Tropa tr = (Tropa) objC.getListaC().get(i);
+            msj = "Tropa;" + objC.getListaC().get(i).getNombre() + ";" +
+              objC.getListaC().get(i).getObjetivos() + ";" +
+              objC.getListaC().get(i).getAlcance() + ";" +
+              String.valueOf(objC.getListaC().get(i).getDano()) + ";" +
+              String.valueOf(objC.getListaC().get(i).getVida()) + ";" +
+              objC.getListaC().get(i).getCalidad() + ";" +
+              String.valueOf(objC.getListaC().get(i).getCosto()) + ";N/A;N/A" +
+              String.valueOf(tr.getVelocidadMovimineto()) + ";";
+                    objC.getListaC().get(i).getRuta();
+        }
         return msj;
-    }*/
+    }
 }

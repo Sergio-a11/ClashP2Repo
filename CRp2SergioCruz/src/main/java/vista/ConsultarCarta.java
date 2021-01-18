@@ -40,6 +40,8 @@ public class ConsultarCarta extends javax.swing.JInternalFrame {
         TablaCatas = new javax.swing.JTable();
 
         setClosable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         txtaBetaConsulta.setColumns(20);
         txtaBetaConsulta.setRows(5);
@@ -57,11 +59,11 @@ public class ConsultarCarta extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Tipo", "Nombre", "Objetivos", "Alcance", "Daño", "Vida", "Calidad", "Costo", "Tiempo en Arena", "Duración", "Velocidad de Moviento", "Imagen"
+                "Tipo", "Nombre", "Objetivos", "Alcance", "Daño", "Vida", "Calidad", "Costo", "Tiempo en Arena", "Duración", "Velocidad de Moviento", "Ruta"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, false, false, false, false
