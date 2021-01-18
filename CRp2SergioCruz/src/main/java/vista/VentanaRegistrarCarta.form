@@ -54,7 +54,6 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="pndHechizo" alignment="0" max="32767" attributes="0"/>
                               <Component id="pndEstructuras" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnMas" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" attributes="0">
@@ -80,9 +79,10 @@
                                                       <Component id="txtCosto" alignment="0" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <Component id="pndHechizo2" max="32767" attributes="0"/>
+                                              <Component id="pndHechizo2" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="btnMas" alignment="1" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="spr1" min="-2" pref="13" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -120,7 +120,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                          <Component id="pndImagen" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -149,19 +153,15 @@
                                       <Component id="lblCosto" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtCosto" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btnMas" min="-2" pref="32" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="pndHechizo2" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="spr1" alignment="0" min="-2" pref="326" max="-2" attributes="0"/>
+                              <Component id="spr1" min="-2" pref="368" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                          <Component id="pndImagen" min="-2" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                  <Component id="btnMas" min="-2" pref="32" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="pndEstructuras" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -392,7 +392,10 @@
         </Container>
         <Component class="javax.swing.JButton" name="btnMas">
           <Properties>
-            <Property name="text" type="java.lang.String" value="M&#xe1;s"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="*M&#xe1;s Opciones*"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="pndHechizo">

@@ -54,7 +54,6 @@ public class Controlador implements ActionListener{
         //el cmb no se inicializa
         this.frmRC.getBtnSubirImagen().addActionListener(this);
         this.frmRC.getBtnRegistrarCarta().addActionListener(this);
-        this.frmCC.getBtnConsultar().addActionListener(this);
         this.frmRC.getBtnMas().addActionListener(this);
         this.ruta = "";
         this.con = new Conexion();
@@ -281,12 +280,6 @@ public class Controlador implements ActionListener{
             ruta = frmRC.getTxtRuta().getText();
             //objC.getListaC().get(objC.getListaC().size()-1).setRuta(frmRC.getTxtRuta().getText());
         }
-        if(ae.getSource() == frmCC.getBtnConsultar())
-        {
-            for (int i = 0; i < objC.getListaC().size(); i++) {
-                frmCC.getTxtaBetaConsulta().append(objC.getListaC().get(i).toString());
-            }
-        }
     }
     
     public void abrirVentana(JInternalFrame frm)
@@ -324,25 +317,6 @@ public class Controlador implements ActionListener{
         frmRC.getPndTropa().setVisible(false);
     }
     
-    public void agregarDatos(JTable tabla) throws IOException
-    {
-        String fig = "";
-        DefaultTableModel plantilla = (DefaultTableModel) tabla.getModel();
-        plantilla.setRowCount(0);
-        for(int i=0; i<objC.getListaC().size(); i++)
-        {
-            fig = objC.getListaC().get(i).getRuta();
-            Object datos[] = {"hez",objC.getListaC().get(i).getNombre(),
-              objC.getListaC().get(i).getObjetivos(),
-              objC.getListaC().get(i).getAlcance(),
-              String.valueOf(objC.getListaC().get(i).getDano()),
-              String.valueOf(objC.getListaC().get(i).getVida()),
-              objC.getListaC().get(i).getCalidad(),
-              String.valueOf(objC.getListaC().get(i).getCosto()),
-              "bn", "listo", "dn", fig};
-            plantilla.addRow(datos);
-        }
-    }
     
     public String datos(int i)
     {

@@ -170,7 +170,8 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnMas.setText("Más");
+        btnMas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnMas.setText("*Más Opciones*");
 
         lblDuracion.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
         lblDuracion.setText("Duración");
@@ -297,7 +298,6 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                         .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(pndHechizo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(pndEstructuras, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnMas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
@@ -319,7 +319,8 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                                                     .addComponent(cmbCalidad, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addComponent(txtDano, javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addComponent(txtCosto)))
-                                            .addComponent(pndHechizo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addComponent(pndHechizo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnMas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(spr1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -347,6 +348,9 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                 .addGap(39, 39, 39)
                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(pndImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
                         .addComponent(lblTitulo)
                         .addGap(18, 18, 18)
                         .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,14 +374,11 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblCosto)
                                     .addComponent(txtCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnMas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(pndHechizo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(spr1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(pndImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(13, 13, 13)
-                .addComponent(btnMas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spr1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(pndEstructuras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
