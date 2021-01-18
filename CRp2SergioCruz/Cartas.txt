@@ -1,1 +1,2 @@
 Estructura;Bomb Tower;Tierra;Medio;1200;1234;Especial;4;1233;N/A;N/A;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\bomb_tower.png
+Hechizo;Zap;N/A;N/A;300;N/A;Común;2;N/A;1;N/A;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\zap.png

@@ -70,7 +70,7 @@ public class Controlador implements ActionListener{
         {
             abrirVentana(frmCC);
             try {
-                agregarDatos(frmCC.getTablaCatas());
+                agregarDatosPersistencia(frmCC.getTablaCatas());
                 //convertir en tabla??
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(frmP, "Error al abrir el archivo");
@@ -384,5 +384,24 @@ public class Controlador implements ActionListener{
                     objC.getListaC().get(i).getRuta();
         }
         return msj;
+    }
+    
+    public void agregarDatosPersistencia(JTable tabla) throws IOException
+    {
+        DefaultTableModel plantilla = (DefaultTableModel) tabla.getModel();
+        plantilla.setRowCount(0);
+        String datos = con.leerDatos("Cartas.txt");
+        archivoTabla(datos,frmCC.getTablaCatas());
+    }
+
+    public void archivoTabla(String datos, JTable tabla) {
+        DefaultTableModel plantilla = (DefaultTableModel) tabla.getModel();
+        String lista[] = datos.split("\n");
+        for (int i = 0; i < lista.length; i++) {
+            String info[] = lista[i].split(";");
+            Object fila[] = {info[0], info[1], info[2] , info[3], info[4],
+            info[5], info[6], info[7], info[8], info[9], info[10], info[11]};
+            plantilla.addRow(fila);
+        }
     }
 }
