@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -33,6 +34,7 @@ public class Controlador implements ActionListener{
     VentanaRegistrarCarta frmRC;
     SubirImagen buscador;
     ConsultarCarta frmCC;
+    CrearMazo frmCM;
     Cartas objC;
     String ruta;
     Conexion con;
@@ -43,9 +45,11 @@ public class Controlador implements ActionListener{
         this.buscador = new SubirImagen();
         this.frmCC = new ConsultarCarta();
         this.objC = new Cartas();
+        this.frmCM = new CrearMazo();
         frmP.getPndEscritorio().add(frmRC);
         frmP.getPndEscritorio().add(buscador);
         frmP.getPndEscritorio().add(frmCC);
+        frmP.getPndEscritorio().add(frmCM);
         this.frmP.getOpcmConsultarCarta().addActionListener(this);
         this.frmP.getOpcmRegistrarCarta().addActionListener(this);
         this.frmP.getOpcmConsultarMazos().addActionListener(this);
@@ -55,6 +59,7 @@ public class Controlador implements ActionListener{
         this.frmRC.getBtnSubirImagen().addActionListener(this);
         this.frmRC.getBtnRegistrarCarta().addActionListener(this);
         this.frmRC.getBtnMas().addActionListener(this);
+        this.frmCM.getBtnGuardarMazo().addActionListener(this);
         this.ruta = "";
         this.con = new Conexion();
     }
@@ -279,6 +284,89 @@ public class Controlador implements ActionListener{
             //aignar ruta de la imagen a la cartacarta.setRuta(frmRC.getTxtRuta().getText());
             ruta = frmRC.getTxtRuta().getText();
             //objC.getListaC().get(objC.getListaC().size()-1).setRuta(frmRC.getTxtRuta().getText());
+        }
+        if(ae.getSource() == frmP.getOpcmCrearMazo())
+        {
+            abrirVentana(frmCM);
+            try {
+                String datos = con.leerDatos("Cartas.txt");
+                String lista[] = datos.split("\n");
+                for (int i = 0; i < lista.length; i++) {
+                    String info[] = lista[i].split(";");
+                    frmCM.getCmbCarta1().addItem(info[1]);
+                    frmCM.getCmbCarta2().addItem(info[1]);
+                    frmCM.getCmbCarta3().addItem(info[1]);
+                    frmCM.getCmbCarta4().addItem(info[1]);
+                    frmCM.getCmbCarta5().addItem(info[1]);
+                    frmCM.getCmbCarta6().addItem(info[1]);
+                    frmCM.getCmbCarta7().addItem(info[1]);
+                    frmCM.getCmbCarta8().addItem(info[1]);
+                }
+                //frmCM.getCmbCarta1().setModel(new DefaultComboBoxModel(nombres));
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(frmP,"Error al abrir" + ex);
+            }
+        }
+        if(ae.getSource() == frmCM.getBtnGuardarMazo())
+        {
+            try {
+                String data = con.leerDatos("Cartas.txt");
+                String lineas[] = data.split("\n");
+                String msj = "";
+                for (int i = 0; i < lineas.length ; i++) {
+                    String info[] = lineas[i].split(";");
+
+                    if(info[1].equals(String.valueOf(frmCM.getCmbCarta1().getSelectedItem())))
+                    {
+                        msj = lineas[i];
+
+                    }
+                    /*if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta2().getSelectedItem())))
+                    {
+                        msj = datos(i);
+                    }
+                    if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta3().getSelectedItem())))
+                    {
+                        msj = datos(i);
+                    }
+                    if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta4().getSelectedItem())))
+                    {
+                        msj = datos(i);
+                    }
+                    if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta5().getSelectedItem())))
+                    {
+                        msj = datos(i);
+                    }
+                    if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta6().getSelectedItem())))
+                    {
+                        msj = datos(i);
+                    }
+                    if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta7().getSelectedItem())))
+                    {
+                        msj = datos(i);
+                    }
+                    if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta8().getSelectedItem())))
+                    {
+                        msj = datos(i);
+                    }*/
+
+                        try {
+                            con.EscribeDatos(msj, "Mazo1.txt");
+                            break;
+                        } catch (IOException ex) {
+                            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+
+                }
+                
+                
+            } catch (IOException ex) {
+                Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                
+            }
+            
+            
         }
     }
     
