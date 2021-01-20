@@ -309,22 +309,98 @@ public class Controlador implements ActionListener{
         }
         if(ae.getSource() == frmCM.getBtnGuardarMazo())
         {
+            String msj = "";
+            //cojo los nombres de los comboBox miro si no hay alguno repetido y si esta bien extraigo la info del archivo
+            String mazo[] = {String.valueOf(frmCM.getCmbCarta1().getSelectedItem()),
+                            String.valueOf(frmCM.getCmbCarta2().getSelectedItem()),
+                            String.valueOf(frmCM.getCmbCarta3().getSelectedItem()),
+                            String.valueOf(frmCM.getCmbCarta4().getSelectedItem()),
+                            String.valueOf(frmCM.getCmbCarta5().getSelectedItem()),
+                            String.valueOf(frmCM.getCmbCarta6().getSelectedItem()),
+                            String.valueOf(frmCM.getCmbCarta7().getSelectedItem()),
+                            String.valueOf(frmCM.getCmbCarta8().getSelectedItem())};
+            if(repetido(mazo) == true)
+            {
+                JOptionPane.showMessageDialog(frmCM, "Hay cartas repetidas, mazo NO guardado");
+            }
+            else
+            {
+                String data;
+                try {
+                    data = con.leerDatos("Cartas.txt");
+                    String lineas[] = data.split("\n");
+                    for (int i = 0; i < lineas.length ; i++) 
+                    {
+                        String info[] = lineas[i].split(";");
+                        if(info[1].equals(mazo[0]))
+                        {
+                            msj = lineas[i] + "\n";
+                        }
+                        if(info[1].equals(mazo[1]))
+                        {
+                            msj += lineas[i] + "\n";
+                        }
+                        if(info[1].equals(mazo[2]))
+                        {
+                            msj += lineas[i] + "\n";
+                        }
+                        if(info[1].equals(mazo[3]))
+                        {
+                            msj += lineas[i] + "\n";
+                        }
+                        if(info[1].equals(mazo[4]))
+                        {
+                            msj += lineas[i] + "\n";
+                        }
+                        if(info[1].equals(mazo[5]))
+                        {
+                            msj += lineas[i] + "\n";
+                        }
+                        if(info[1].equals(mazo[6]))
+                        {
+                            msj += lineas[i] + "\n";
+                        }
+                        if(info[1].equals(mazo[7]))
+                        {
+                            msj += lineas[i] + "\n";
+                        }
+                    }
+                } 
+                catch(IOException ex) 
+                {
+                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                if(!msj.equals(""))
+                {
+                    try 
+                    {
+                        con.EscribeDatos(msj, "Mazo5.txt");
+                    }
+                    catch(IOException ex)
+                    {
+                        Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                
+            }
+            /*
             try {
                 String data = con.leerDatos("Cartas.txt");
                 String lineas[] = data.split("\n");
-                String msj = "";
+                String msj[] = null;
                 for (int i = 0; i < lineas.length ; i++) {
                     String info[] = lineas[i].split(";");
 
                     if(info[1].equals(String.valueOf(frmCM.getCmbCarta1().getSelectedItem())))
                     {
-                        msj = lineas[i];
-
+                        msj[0] = lineas[i];
                     }
-                    /*if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta2().getSelectedItem())))
+                    
+                    if((!msj[0].equals(msj[1])) && objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta2().getSelectedItem())))
                     {
-                        msj = datos(i);
+                        msj[1] = lineas[i];
                     }
+                    /*
                     if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta3().getSelectedItem())))
                     {
                         msj = datos(i);
@@ -348,10 +424,10 @@ public class Controlador implements ActionListener{
                     if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta8().getSelectedItem())))
                     {
                         msj = datos(i);
-                    }*/
+                    }
 
                         try {
-                            con.EscribeDatos(msj, "Mazo1.txt");
+                            con.EscribeDatos(msj[i], "Mazo1.txt");
                             break;
                         } catch (IOException ex) {
                             Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
@@ -365,7 +441,7 @@ public class Controlador implements ActionListener{
                 Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
                 
             }
-            
+            */
             
         }
     }
@@ -441,8 +517,8 @@ public class Controlador implements ActionListener{
               String.valueOf(objC.getListaC().get(i).getDano()) + ";" +
               String.valueOf(objC.getListaC().get(i).getVida()) + ";" +
               objC.getListaC().get(i).getCalidad() + ";" +
-              String.valueOf(objC.getListaC().get(i).getCosto()) + ";N/A;N/A" +
-              String.valueOf(tr.getVelocidadMovimineto()) + ";";
+              String.valueOf(objC.getListaC().get(i).getCosto()) + ";N/A;N/A;" +
+              String.valueOf(tr.getVelocidadMovimineto()) + ";" +
                     objC.getListaC().get(i).getRuta();
         }
         return msj;
@@ -465,5 +541,22 @@ public class Controlador implements ActionListener{
             info[5], info[6], info[7], info[8], info[9], info[10], info[11]};
             plantilla.addRow(fila);
         }
+    }
+    
+    public boolean repetido(String lineas[])
+    {
+        boolean flag = false;
+        for (int i = 0; i < 7; i++) 
+        {
+            for (int j = i+1; j < 8 ; j++) 
+            {
+                if(lineas[j].equals(lineas[i]))
+                {
+                    flag = true;
+                    break;
+                }
+            }
+        }
+        return flag;
     }
 }

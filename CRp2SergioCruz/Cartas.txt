@@ -1,3 +1,8 @@
 Estructura;Bomb Tower;Tierra;Medio;1200;1234;Especial;4;1233;N/A;N/A;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\bomb_tower.png
 Hechizo;Zap;N/A;N/A;300;N/A;Común;2;N/A;1;N/A;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\zap.png
-Tropa;Cerdos Reales;Estructuras;Corto;250;300;Especial;5;N/A;N/AAlta;
+Tropa;Cerdos Reales;Estructuras;Cuerpo a Cuerpo;120;330;Especial;5;N/A;N/A;Alta;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\royal_hog.png
+Tropa;Arquero Magico;Tierra y Aire;Muy Largo;450;3000;Legendaria;4;N/A;N/A;Alta;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\arquero_magico.png
+Hechizo;Tornado;N/A;N/A;250;N/A;Épica;3;N/A;5;N/A;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\tornado.png
+Tropa;Caballero;Tierra;Cuerpo a Cuerpo;120;3500;Común;3;N/A;N/A;Media;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\knight.png
+Tropa;Pandilla de deundes;Tierra y Aire;Medio;300;100;Común;3;N/A;N/A;Media;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\goblin_gang.png
+Tropa;Espiritu de Hielo;Tierra y Aire;Corto;10;200;Común;1;N/A;N/A;Muy Alta;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\snow_spirits.png
