@@ -13,12 +13,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -35,6 +33,7 @@ public class Controlador implements ActionListener{
     SubirImagen buscador;
     ConsultarCarta frmCC;
     CrearMazo frmCM;
+    ConsultarMazo frmConultaM;
     Cartas objC;
     String ruta;
     Conexion con;
@@ -46,10 +45,12 @@ public class Controlador implements ActionListener{
         this.frmCC = new ConsultarCarta();
         this.objC = new Cartas();
         this.frmCM = new CrearMazo();
+        this.frmConultaM = new ConsultarMazo();
         frmP.getPndEscritorio().add(frmRC);
         frmP.getPndEscritorio().add(buscador);
         frmP.getPndEscritorio().add(frmCC);
         frmP.getPndEscritorio().add(frmCM);
+        frmP.getPndEscritorio().add(frmConultaM);
         this.frmP.getOpcmConsultarCarta().addActionListener(this);
         this.frmP.getOpcmRegistrarCarta().addActionListener(this);
         this.frmP.getOpcmConsultarMazos().addActionListener(this);
@@ -60,6 +61,7 @@ public class Controlador implements ActionListener{
         this.frmRC.getBtnRegistrarCarta().addActionListener(this);
         this.frmRC.getBtnMas().addActionListener(this);
         this.frmCM.getBtnGuardarMazo().addActionListener(this);
+        this.frmConultaM.getjButton1().addActionListener(this);
         this.ruta = "";
         this.con = new Conexion();
     }
@@ -273,6 +275,8 @@ public class Controlador implements ActionListener{
                 try
                 {
                     ImageIcon ImgIcon = new ImageIcon(archivo.toString());//archivo en forma de texto
+                    //JOptionPane.showMessageDialog(frmP, archivo.toString());//ruta igual a la guardada
+                    //JOptionPane.showMessageDialog(frmP, archivo.getAbsolutePath()); las dos
                     Icon icono = new ImageIcon(ImgIcon.getImage().getScaledInstance(frmRC.getPndImagen().getWidth(),frmRC.getPndImagen().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
                     frmRC.getLblIcon().setIcon(icono);//se establece la imagen en el label
                 }
@@ -369,7 +373,7 @@ public class Controlador implements ActionListener{
                 } 
                 catch(IOException ex) 
                 {
-                    //se guarda la primera lista de cartas siempre
+                    //estrucutura que pedo en .txt
                     JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo");
                 }
                 if(!msj.equals(""))
@@ -458,6 +462,38 @@ public class Controlador implements ActionListener{
             }
             */
             
+        }
+        if(ae.getSource() == frmP.getOpcmConsultarMazos())
+        {
+            abrirVentana(frmConultaM);
+            String data;
+            try {
+                data = con.leerDatos("Cartas.txt");
+                String lineas[] = data.split("\n");
+                String msj[] = null;
+                String info[] = lineas[0].split(";");
+                frmConultaM.getjTextArea1().append(info[0] + info[1]);
+                try
+                {
+                    ImageIcon ImgIcon = new ImageIcon(info[11]);//archivo en forma de texto
+                    //JOptionPane.showMessageDialog(frmP, archivo.toString());//ruta igual a la guardada
+                    //JOptionPane.showMessageDialog(frmP, archivo.getAbsolutePath()); las dos
+                    Icon icono = new ImageIcon(ImgIcon.getImage().getScaledInstance(frmConultaM.getjPanel1().getWidth(),frmConultaM.getjPanel1().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+                    frmConultaM.getjLabel1().setIcon(icono);//se establece la imagen en el label
+                }
+                catch(Exception e)
+                {
+                    JOptionPane.showMessageDialog(frmP,"Error al abrir" + e);
+                }
+                /*
+                for (int i = 0; i < lineas.length ; i++) {
+                    String info[] = lineas[i].split(";");
+                    
+                }*/
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo");
+            }
+                
         }
     }
     
