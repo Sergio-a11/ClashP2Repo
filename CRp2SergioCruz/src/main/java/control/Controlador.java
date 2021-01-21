@@ -472,14 +472,14 @@ public class Controlador implements ActionListener{
                 String lineas[] = data.split("\n");
                 String msj[] = null;
                 String info[] = lineas[0].split(";");
-                frmConultaM.getjTextArea1().append(info[0] + info[1]);
+                //frmConultaM.getjTextArea1().append(info[0] + info[1]);
                 try
                 {
                     ImageIcon ImgIcon = new ImageIcon(info[11]);//archivo en forma de texto
                     //JOptionPane.showMessageDialog(frmP, archivo.toString());//ruta igual a la guardada
                     //JOptionPane.showMessageDialog(frmP, archivo.getAbsolutePath()); las dos
-                    Icon icono = new ImageIcon(ImgIcon.getImage().getScaledInstance(frmConultaM.getjPanel1().getWidth(),frmConultaM.getjPanel1().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
-                    frmConultaM.getjLabel1().setIcon(icono);//se establece la imagen en el label
+                    //Icon icono = new ImageIcon(ImgIcon.getImage().getScaledInstance(frmConultaM.getjPanel1().getWidth(),frmConultaM.getjPanel1().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+                    //frmConultaM.getjLabel1().setIcon(icono);//se establece la imagen en el label
                 }
                 catch(Exception e)
                 {
