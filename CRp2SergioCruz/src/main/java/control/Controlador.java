@@ -250,6 +250,7 @@ public class Controlador implements ActionListener{
                 frmRC.getTxtVida().setText("");
                 frmRC.getTxtaDescripcion().setText("");
                 frmRC.getLblIcon().setIcon(null);
+                objC = null;
             }
             if(flag == true)
             {
@@ -334,7 +335,7 @@ public class Controlador implements ActionListener{
                         String info[] = lineas[i].split(";");
                         if(info[1].equals(mazo[0]))
                         {
-                            msj = lineas[i] + "\n";
+                            msj += lineas[i] + "\n";
                         }
                         if(info[1].equals(mazo[1]))
                         {
@@ -368,18 +369,32 @@ public class Controlador implements ActionListener{
                 } 
                 catch(IOException ex) 
                 {
-                    Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+                    //se guarda la primera lista de cartas siempre
+                    JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo");
                 }
                 if(!msj.equals(""))
                 {
-                    try 
-                    {
-                        con.EscribeDatos(msj, "Mazo5.txt");
+                    try {
+                        String dato = con.leerDatos("Mazos.txt");
+                        String n[] = dato.split("\n");
+                        try 
+                        {
+                            con.EscribeDatos(msj, "Mazo" + String.valueOf(n.length) + ".txt");
+                            con.EscribeDatos(String.valueOf(n.length), "Mazos.txt");
+                        }
+                        catch(IOException ex)
+                        {
+                            JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo");
+                        }
+                    } catch (IOException ex) {
+                        try {
+                            con.EscribeDatos("0", "Mazos.txt");
+                            con.EscribeDatos(msj, "Mazo0.txt");
+                        } catch (IOException ex1) {
+                            JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo");
+                        }
                     }
-                    catch(IOException ex)
-                    {
-                        Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    
                 }
                 
             }
