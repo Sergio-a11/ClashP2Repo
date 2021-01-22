@@ -61,7 +61,8 @@ public class Controlador implements ActionListener{
         this.frmRC.getBtnRegistrarCarta().addActionListener(this);
         this.frmRC.getBtnMas().addActionListener(this);
         this.frmCM.getBtnGuardarMazo().addActionListener(this);
-        this.frmConultaM.getjButton1().addActionListener(this);
+        this.frmConultaM.getBtnAnterior().addActionListener(this);
+        this.frmConultaM.getBtnSiguiente().addActionListener(this);
         this.ruta = "";
         this.con = new Conexion();
     }
@@ -468,28 +469,78 @@ public class Controlador implements ActionListener{
             abrirVentana(frmConultaM);
             String data;
             try {
-                data = con.leerDatos("Cartas.txt");
+                data = con.leerDatos("Mazo0.txt");
                 String lineas[] = data.split("\n");
-                String msj[] = null;
-                String info[] = lineas[0].split(";");
-                //frmConultaM.getjTextArea1().append(info[0] + info[1]);
-                try
-                {
-                    ImageIcon ImgIcon = new ImageIcon(info[11]);//archivo en forma de texto
-                    //JOptionPane.showMessageDialog(frmP, archivo.toString());//ruta igual a la guardada
-                    //JOptionPane.showMessageDialog(frmP, archivo.getAbsolutePath()); las dos
-                    //Icon icono = new ImageIcon(ImgIcon.getImage().getScaledInstance(frmConultaM.getjPanel1().getWidth(),frmConultaM.getjPanel1().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
-                    //frmConultaM.getjLabel1().setIcon(icono);//se establece la imagen en el label
-                }
-                catch(Exception e)
-                {
-                    JOptionPane.showMessageDialog(frmP,"Error al abrir" + e);
-                }
-                /*
-                for (int i = 0; i < lineas.length ; i++) {
-                    String info[] = lineas[i].split(";");
+                //for (int i = 0; i < 10; i++) {
+                    String info1[] = lineas[0].split(";");
+                    frmConultaM.getCtipo1().setText(info1[0]);
+                    frmConultaM.getCnombre1().setText(info1[1]);
+                    frmConultaM.getCcalidad1().setText(info1[6]);
+                    ImageIcon imgIcon1 = new ImageIcon(info1[11]);
+                    Icon icono = new ImageIcon(imgIcon1.getImage().getScaledInstance(frmConultaM.getPndC1().getWidth(),frmConultaM.getPndC1().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+                    frmConultaM.getLblC1().setIcon(icono);//se establece la imagen en el label
                     
-                }*/
+                    String info2[] = lineas[1].split(";");
+                    frmConultaM.getCtipo2().setText(info2[0]);
+                    frmConultaM.getCnombre2().setText(info2[1]);
+                    frmConultaM.getCcalidad2().setText(info2[6]);
+                    ImageIcon imgIcon2 = new ImageIcon(info2[11]);
+                    Icon icono2 = new ImageIcon(imgIcon2.getImage().getScaledInstance(frmConultaM.getPndC2().getWidth(),frmConultaM.getPndC2().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+                    frmConultaM.getLblC2().setIcon(icono2);//se establece la imagen en el label
+                    
+                    String info3[] = lineas[2].split(";");
+                    frmConultaM.getCtipo3().setText(info3[0]);
+                    frmConultaM.getCnombre3().setText(info3[1]);
+                    frmConultaM.getCcalidad3().setText(info3[6]);
+                    ImageIcon imgIcon3 = new ImageIcon(info3[11]);
+                    Icon icono3 = new ImageIcon(imgIcon3.getImage().getScaledInstance(frmConultaM.getPndC3().getWidth(),frmConultaM.getPndC3().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+                    frmConultaM.getLblC3().setIcon(icono3);//se establece la imagen en el label
+                    
+                    String info4[] = lineas[3].split(";");
+                    frmConultaM.getCtipo4().setText(info4[0]);
+                    frmConultaM.getCnombre4().setText(info4[1]);
+                    frmConultaM.getCcalidad4().setText(info4[6]);
+                    ImageIcon imgIcon4 = new ImageIcon(info4[11]);
+                    Icon icono4 = new ImageIcon(imgIcon4.getImage().getScaledInstance(frmConultaM.getPndC4().getWidth(),frmConultaM.getPndC4().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+                    frmConultaM.getLblC4().setIcon(icono4);//se establece la imagen en el label
+                    
+                    String[] info5 = lineas[4].split(";");
+                    frmConultaM.getCtipo5().setText(info5[0]);
+                    frmConultaM.getCnombre5().setText(info5[1]);
+                    frmConultaM.getCcalidad5().setText(info5[6]);
+                    ImageIcon imgIcon5 = new ImageIcon(info5[11]);
+                    Icon icono5 = new ImageIcon(imgIcon5.getImage().getScaledInstance(frmConultaM.getPndC5().getWidth(),frmConultaM.getPndC5().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+                    frmConultaM.getLblC5().setIcon(icono5);//se establece la imagen en el label
+                    
+                    String info6[] = lineas[5].split(";");
+                    frmConultaM.getCtipo6().setText(info6[0]);
+                    frmConultaM.getCnombre6().setText(info6[1]);
+                    frmConultaM.getCcalidad6().setText(info6[6]);
+                    ImageIcon imgIcon6 = new ImageIcon(info6[11]);
+                    Icon icono6 = new ImageIcon(imgIcon6.getImage().getScaledInstance(frmConultaM.getPndC6().getWidth(),frmConultaM.getPndC6().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+                    frmConultaM.getLblC6().setIcon(icono6);//se establece la imagen en el label
+                    
+                    String info7[] = lineas[6].split(";");
+                    frmConultaM.getCtipo7().setText(info7[0]);
+                    frmConultaM.getCnombre7().setText(info7[1]);
+                    frmConultaM.getCcalidad7().setText(info7[6]);
+                    ImageIcon imgIcon7 = new ImageIcon(info7[11]);
+                    Icon icono7 = new ImageIcon(imgIcon7.getImage().getScaledInstance(frmConultaM.getPndC7().getWidth(),frmConultaM.getPndC7().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+                    frmConultaM.getLblC7().setIcon(icono7);//se establece la imagen en el label
+                    
+                    String info8[] = lineas[7].split(";");
+                    frmConultaM.getCtipo8().setText(info8[0]);
+                    frmConultaM.getCnombre8().setText(info8[1]);
+                    frmConultaM.getCcalidad8().setText(info8[6]);
+                    ImageIcon imgIcon8 = new ImageIcon(info8[11]);
+                    Icon icono8 = new ImageIcon(imgIcon8.getImage().getScaledInstance(frmConultaM.getPndC8().getWidth(),frmConultaM.getPndC8().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+                    frmConultaM.getLblC8().setIcon(icono8);//se establece la imagen en el label
+                //}
+                
+                //frmConultaM.getjTextArea1().append(info[0] + info[1]);
+               
+                    
+                
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo");
             }
