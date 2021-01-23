@@ -45,14 +45,14 @@ public class ConsultarCarta extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Tipo", "Nombre", "Objetivos", "Alcance", "Daño", "Vida", "Calidad", "Costo", "Tiempo en Arena", "Duración", "Velocidad de Moviento", "Ruta"
+                "Tipo", "Nombre", "Objetivos", "Alcance", "Daño", "Vida", "Calidad", "Costo", "Tiempo en Arena", "Duración", "Velocidad de Moviento", "Utilidad", "Ruta"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {

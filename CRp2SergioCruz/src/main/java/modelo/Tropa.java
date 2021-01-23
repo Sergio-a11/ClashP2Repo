@@ -15,7 +15,7 @@ public class Tropa extends Carta {
     
     @Override
     public String Utilidad() {
-        return String.valueOf((this.costo)/(this.dano + this.vida));
+        return String.valueOf((this.dano + this.vida)/(this.costo));
     }
 
     public Tropa(String velocidadMovimineto, String objetivos, String nombre, String alcance, String calidad, int costo, String ruta, int dano, int vida) {

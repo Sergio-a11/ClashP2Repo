@@ -10,9 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -297,6 +296,16 @@ public class Controlador implements ActionListener{
         {
             abrirVentana(frmCM);
             try {
+                
+                    frmCM.getCmbCarta1().removeAll();
+                    frmCM.getCmbCarta2().removeAll();
+                    frmCM.getCmbCarta3().removeAll();
+                    frmCM.getCmbCarta4().removeAll();
+                    frmCM.getCmbCarta5().removeAll();
+                    frmCM.getCmbCarta6().removeAll();
+                    frmCM.getCmbCarta7().removeAll();
+                    frmCM.getCmbCarta8().removeAll();
+                
                 String datos = con.leerDatos("Cartas.txt");
                 String lista[] = datos.split("\n");
                 for (int i = 0; i < lista.length; i++) {
@@ -311,8 +320,9 @@ public class Controlador implements ActionListener{
                     frmCM.getCmbCarta8().addItem(info[1]);
                 }
                 //frmCM.getCmbCarta1().setModel(new DefaultComboBoxModel(nombres));
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(frmP,"Error al abrir" + ex);
+            } 
+            catch (IOException ex) {
+                JOptionPane.showMessageDialog(frmP,"Error al abrir Cartas.txt");
             }
         }
         if(ae.getSource() == frmCM.getBtnGuardarMazo())
@@ -568,7 +578,8 @@ public class Controlador implements ActionListener{
                         frmConultaM.getBtnAnterior().setVisible(false);
                     }
                 
-            } catch (IOException ex) {
+            } 
+            catch (IOException ex) {
                 JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo (Mazos)");
                 
                 frmConultaM.getBtnSiguiente().setVisible(true);
@@ -629,6 +640,8 @@ public class Controlador implements ActionListener{
               objC.getListaC().get(i).getCalidad() + ";" +
               String.valueOf(objC.getListaC().get(i).getCosto()) + ";" +
               String.valueOf(es.getTiempoEnBatalla()) + ";N/A;N/A;" +
+                    //aca se ponen las cosas para el txt
+                    objC.getListaC().get(i).Utilidad() +  ";" + 
                     objC.getListaC().get(i).getRuta();
         }
         if(objC.getListaC().get(i) instanceof Hechizo)
@@ -639,6 +652,7 @@ public class Controlador implements ActionListener{
               objC.getListaC().get(i).getCalidad() + ";" +
               String.valueOf(objC.getListaC().get(i).getCosto()) + ";N/A;" +
               String.valueOf(he.getDuracion()) + ";N/A;" +
+                    objC.getListaC().get(i).Utilidad() +  ";" + 
                     objC.getListaC().get(i).getRuta();
         }
         if(objC.getListaC().get(i) instanceof Tropa)
@@ -652,6 +666,7 @@ public class Controlador implements ActionListener{
               objC.getListaC().get(i).getCalidad() + ";" +
               String.valueOf(objC.getListaC().get(i).getCosto()) + ";N/A;N/A;" +
               String.valueOf(tr.getVelocidadMovimineto()) + ";" +
+                    objC.getListaC().get(i).Utilidad() + ";" + 
                     objC.getListaC().get(i).getRuta();
         }
         return msj;
@@ -661,8 +676,17 @@ public class Controlador implements ActionListener{
     {
         DefaultTableModel plantilla = (DefaultTableModel) tabla.getModel();
         plantilla.setRowCount(0);
-        String datos = con.leerDatos("Cartas.txt");
-        archivoTabla(datos,frmCC.getTablaCatas());
+        try
+        {
+            String datos = con.leerDatos("Cartas.txt");
+            archivoTabla(datos,frmCC.getTablaCatas());
+        }
+        catch(FileNotFoundException e)
+        {
+            JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo (Cartas.txt)");
+        }
+        
+        
     }
 
     public void archivoTabla(String datos, JTable tabla) {
@@ -671,7 +695,7 @@ public class Controlador implements ActionListener{
         for (int i = 0; i < lista.length; i++) {
             String info[] = lista[i].split(";");
             Object fila[] = {info[0], info[1], info[2] , info[3], info[4],
-            info[5], info[6], info[7], info[8], info[9], info[10], info[11]};
+            info[5], info[6], info[7], info[8], info[9], info[10], info[11], info[12]};
             plantilla.addRow(fila);
         }
     }
@@ -701,7 +725,7 @@ public class Controlador implements ActionListener{
         frmConultaM.getCtipo1().setText(info1[0]);
         frmConultaM.getCnombre1().setText(info1[1]);
         frmConultaM.getCcalidad1().setText(info1[6]);
-        ImageIcon imgIcon1 = new ImageIcon(info1[11]);
+        ImageIcon imgIcon1 = new ImageIcon(info1[12]);
         Icon icono = new ImageIcon(imgIcon1.getImage().getScaledInstance(frmConultaM.getPndC1().getWidth(),frmConultaM.getPndC1().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
         frmConultaM.getLblC1().setIcon(icono);//se establece la imagen en el label
 
@@ -709,7 +733,7 @@ public class Controlador implements ActionListener{
         frmConultaM.getCtipo2().setText(info2[0]);
         frmConultaM.getCnombre2().setText(info2[1]);
         frmConultaM.getCcalidad2().setText(info2[6]);
-        ImageIcon imgIcon2 = new ImageIcon(info2[11]);
+        ImageIcon imgIcon2 = new ImageIcon(info2[12]);
         Icon icono2 = new ImageIcon(imgIcon2.getImage().getScaledInstance(frmConultaM.getPndC2().getWidth(),frmConultaM.getPndC2().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
         frmConultaM.getLblC2().setIcon(icono2);//se establece la imagen en el label
 
@@ -717,7 +741,7 @@ public class Controlador implements ActionListener{
         frmConultaM.getCtipo3().setText(info3[0]);
         frmConultaM.getCnombre3().setText(info3[1]);
         frmConultaM.getCcalidad3().setText(info3[6]);
-        ImageIcon imgIcon3 = new ImageIcon(info3[11]);
+        ImageIcon imgIcon3 = new ImageIcon(info3[12]);
         Icon icono3 = new ImageIcon(imgIcon3.getImage().getScaledInstance(frmConultaM.getPndC3().getWidth(),frmConultaM.getPndC3().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
         frmConultaM.getLblC3().setIcon(icono3);//se establece la imagen en el label
 
@@ -725,7 +749,7 @@ public class Controlador implements ActionListener{
         frmConultaM.getCtipo4().setText(info4[0]);
         frmConultaM.getCnombre4().setText(info4[1]);
         frmConultaM.getCcalidad4().setText(info4[6]);
-        ImageIcon imgIcon4 = new ImageIcon(info4[11]);
+        ImageIcon imgIcon4 = new ImageIcon(info4[12]);
         Icon icono4 = new ImageIcon(imgIcon4.getImage().getScaledInstance(frmConultaM.getPndC4().getWidth(),frmConultaM.getPndC4().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
         frmConultaM.getLblC4().setIcon(icono4);//se establece la imagen en el label
 
@@ -733,7 +757,7 @@ public class Controlador implements ActionListener{
         frmConultaM.getCtipo5().setText(info5[0]);
         frmConultaM.getCnombre5().setText(info5[1]);
         frmConultaM.getCcalidad5().setText(info5[6]);
-        ImageIcon imgIcon5 = new ImageIcon(info5[11]);
+        ImageIcon imgIcon5 = new ImageIcon(info5[12]);
         Icon icono5 = new ImageIcon(imgIcon5.getImage().getScaledInstance(frmConultaM.getPndC5().getWidth(),frmConultaM.getPndC5().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
         frmConultaM.getLblC5().setIcon(icono5);//se establece la imagen en el label
 
@@ -741,7 +765,7 @@ public class Controlador implements ActionListener{
         frmConultaM.getCtipo6().setText(info6[0]);
         frmConultaM.getCnombre6().setText(info6[1]);
         frmConultaM.getCcalidad6().setText(info6[6]);
-        ImageIcon imgIcon6 = new ImageIcon(info6[11]);
+        ImageIcon imgIcon6 = new ImageIcon(info6[12]);
         Icon icono6 = new ImageIcon(imgIcon6.getImage().getScaledInstance(frmConultaM.getPndC6().getWidth(),frmConultaM.getPndC6().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
         frmConultaM.getLblC6().setIcon(icono6);//se establece la imagen en el label
 
@@ -749,7 +773,7 @@ public class Controlador implements ActionListener{
         frmConultaM.getCtipo7().setText(info7[0]);
         frmConultaM.getCnombre7().setText(info7[1]);
         frmConultaM.getCcalidad7().setText(info7[6]);
-        ImageIcon imgIcon7 = new ImageIcon(info7[11]);
+        ImageIcon imgIcon7 = new ImageIcon(info7[12]);
         Icon icono7 = new ImageIcon(imgIcon7.getImage().getScaledInstance(frmConultaM.getPndC7().getWidth(),frmConultaM.getPndC7().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
         frmConultaM.getLblC7().setIcon(icono7);//se establece la imagen en el label
 
@@ -757,7 +781,7 @@ public class Controlador implements ActionListener{
         frmConultaM.getCtipo8().setText(info8[0]);
         frmConultaM.getCnombre8().setText(info8[1]);
         frmConultaM.getCcalidad8().setText(info8[6]);
-        ImageIcon imgIcon8 = new ImageIcon(info8[11]);
+        ImageIcon imgIcon8 = new ImageIcon(info8[12]);
         Icon icono8 = new ImageIcon(imgIcon8.getImage().getScaledInstance(frmConultaM.getPndC8().getWidth(),frmConultaM.getPndC8().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
         frmConultaM.getLblC8().setIcon(icono8);//se establece la imagen en el label
     }

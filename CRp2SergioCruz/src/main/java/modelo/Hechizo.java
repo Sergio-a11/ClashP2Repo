@@ -14,7 +14,7 @@ public class Hechizo extends Carta{
     
     @Override
     public String Utilidad() {
-        return String.valueOf((this.costo)/(this.dano + this.vida));
+        return String.valueOf((this.dano + this.duracion)/(this.costo));
     }
 
     public Hechizo(int duracion, int radio, String objetivos, String nombre, String alcance, String calidad, int costo, String ruta, int dano, int vida) {

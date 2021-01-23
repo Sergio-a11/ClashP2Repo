@@ -14,7 +14,7 @@ public class Estructura extends Carta{
     
     @Override
     public String Utilidad() {
-        return String.valueOf((this.costo)/(this.dano + this.vida));
+        return String.valueOf((this.dano + this.vida + this.TiempoEnBatalla)/(this.costo));
     }
 
     public Estructura(int TiempoEnBatalla, String objetivos, String nombre, String alcance, String calidad, int costo, String ruta, int dano, int vida) {
