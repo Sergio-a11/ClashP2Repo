@@ -236,7 +236,7 @@ public class Controlador implements ActionListener{
             if(flag == false)
             {
                 JOptionPane.showMessageDialog(frmP, "Carta Registrada");
-                objC.getListaC().add(carta);
+                this.objC.getListaC().add(carta);
                 String msj = datos(objC.getListaC().size()-1);
                 try {
                     con.EscribeDatos(msj, "Cartas.txt");
@@ -254,7 +254,7 @@ public class Controlador implements ActionListener{
                 frmRC.getTxtVida().setText("");
                 frmRC.getTxtaDescripcion().setText("");
                 frmRC.getLblIcon().setIcon(null);
-                objC = null;
+                //objC = null;
             }
             if(flag == true)
             {
@@ -294,17 +294,18 @@ public class Controlador implements ActionListener{
         }
         if(ae.getSource() == frmP.getOpcmCrearMazo())
         {
+            frmCM.getCmbCarta1().removeAllItems();
+            frmCM.getCmbCarta2().removeAllItems();
+            frmCM.getCmbCarta3().removeAllItems();
+            frmCM.getCmbCarta4().removeAllItems();
+            frmCM.getCmbCarta5().removeAllItems();
+            frmCM.getCmbCarta6().removeAllItems();
+            frmCM.getCmbCarta7().removeAllItems();
+            frmCM.getCmbCarta8().removeAllItems();
             abrirVentana(frmCM);
             try {
                 
-                    frmCM.getCmbCarta1().removeAll();
-                    frmCM.getCmbCarta2().removeAll();
-                    frmCM.getCmbCarta3().removeAll();
-                    frmCM.getCmbCarta4().removeAll();
-                    frmCM.getCmbCarta5().removeAll();
-                    frmCM.getCmbCarta6().removeAll();
-                    frmCM.getCmbCarta7().removeAll();
-                    frmCM.getCmbCarta8().removeAll();
+                    
                 
                 String datos = con.leerDatos("Cartas.txt");
                 String lista[] = datos.split("\n");
@@ -398,6 +399,7 @@ public class Controlador implements ActionListener{
                         {
                             con.EscribeDatos(msj, "Mazo" + String.valueOf(n.length) + ".txt");
                             con.EscribeDatos(String.valueOf(n.length), "Mazos.txt");
+                            JOptionPane.showMessageDialog(frmCM, "Mazo Registrado");
                         }
                         catch(IOException ex)
                         {
@@ -407,6 +409,7 @@ public class Controlador implements ActionListener{
                         try {
                             con.EscribeDatos("0", "Mazos.txt");
                             con.EscribeDatos(msj, "Mazo0.txt");
+                            JOptionPane.showMessageDialog(frmCM, "Mazo Registrado");
                         } catch (IOException ex1) {
                             JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo");
                         }
@@ -479,16 +482,26 @@ public class Controlador implements ActionListener{
         if(ae.getSource() == frmP.getOpcmConsultarMazos())
         {
             frmConultaM.getBtnAnterior().setVisible(false);
+            if(this.n_mazo > 1)
+            {
+                frmConultaM.getBtnAnterior().setVisible(true);
+            }
             abrirVentana(frmConultaM);
             String data;
             try {
                 data = con.leerDatos("Mazo0.txt");
                 auxMazo(data);
-                //String dato = con.leerDatos("Mazos.txt");
-                //String n[] = dato.split("\n");
-                /*if(n.length > 1)
+                String dato = con.leerDatos("Mazos.txt");
+                String n[] = dato.split("\n");
+                if(n.length == 1)
                 {
-                    int i = 1;
+                    frmConultaM.getBtnSiguiente().setVisible(false);
+                }
+                else
+                {
+                    frmConultaM.getBtnSiguiente().setVisible(true);
+                }
+                    /*int i = 1;
                     if(ae.getSource() == frmConultaM.getBtnSiguiente() && i < n.length)
                     {    
                         JOptionPane.showMessageDialog(frmConultaM, "llegue a sig");
@@ -517,7 +530,7 @@ public class Controlador implements ActionListener{
                    
                 
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo");
+                JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo (Mazo#.txt)");
             }
                 
         }
