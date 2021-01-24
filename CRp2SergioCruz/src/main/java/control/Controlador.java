@@ -661,7 +661,7 @@ public class Controlador implements ActionListener{
         {
             Hechizo he = (Hechizo) objC.getListaC().get(i);
             msj = "Hechizo;" + objC.getListaC().get(i).getNombre() + ";N/A;N/A;" +
-              String.valueOf(objC.getListaC().get(i).getDano()) + ";N/A;" +
+              String.valueOf(objC.getListaC().get(i).getDano()) + ";0;" +
               objC.getListaC().get(i).getCalidad() + ";" +
               String.valueOf(objC.getListaC().get(i).getCosto()) + ";N/A;" +
               String.valueOf(he.getDuracion()) + ";N/A;" +
@@ -797,5 +797,16 @@ public class Controlador implements ActionListener{
         ImageIcon imgIcon8 = new ImageIcon(info8[12]);
         Icon icono8 = new ImageIcon(imgIcon8.getImage().getScaledInstance(frmConultaM.getPndC8().getWidth(),frmConultaM.getPndC8().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
         frmConultaM.getLblC8().setIcon(icono8);//se establece la imagen en el label
+        
+        //progress bar
+        frmConultaM.getPgrBarUtilidad().setValue((Integer.parseInt(info1[11]) + Integer.parseInt(info2[11]) + Integer.parseInt(info3[11]) + Integer.parseInt(info4[11]) +
+                Integer.parseInt(info5[11]) + Integer.parseInt(info6[11]) + Integer.parseInt(info7[11]) +Integer.parseInt(info8[11]))/100);
+        
+        frmConultaM.getPgrBarElixir().setValue((((Integer.parseInt(info1[7]) + Integer.parseInt(info2[7]) + Integer.parseInt(info3[7]) + Integer.parseInt(info4[7]) +
+                Integer.parseInt(info5[7]) + Integer.parseInt(info6[7]) + Integer.parseInt(info7[7]) +Integer.parseInt(info8[7]))/8)*100)/10);
+        
+        frmConultaM.getPgrBarVida().setValue((Integer.parseInt(info1[5]) + Integer.parseInt(info2[5]) + Integer.parseInt(info3[5]) + Integer.parseInt(info4[5]) +
+                Integer.parseInt(info5[5]) + Integer.parseInt(info6[5]) + Integer.parseInt(info7[5]) +Integer.parseInt(info8[5]))/1000);
+        //ifs y imagenes
     }
 }
