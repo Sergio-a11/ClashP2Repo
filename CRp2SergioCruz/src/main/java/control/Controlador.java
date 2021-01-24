@@ -277,8 +277,6 @@ public class Controlador implements ActionListener{
                 try
                 {
                     ImageIcon ImgIcon = new ImageIcon(archivo.toString());//archivo en forma de texto
-                    //JOptionPane.showMessageDialog(frmP, archivo.toString());//ruta igual a la guardada
-                    //JOptionPane.showMessageDialog(frmP, archivo.getAbsolutePath()); las dos
                     Icon icono = new ImageIcon(ImgIcon.getImage().getScaledInstance(frmRC.getPndImagen().getWidth(),frmRC.getPndImagen().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
                     frmRC.getLblIcon().setIcon(icono);//se establece la imagen en el label
                 }
@@ -290,7 +288,6 @@ public class Controlador implements ActionListener{
             }
             //aignar ruta de la imagen a la cartacarta.setRuta(frmRC.getTxtRuta().getText());
             ruta = frmRC.getTxtRuta().getText();
-            //objC.getListaC().get(objC.getListaC().size()-1).setRuta(frmRC.getTxtRuta().getText());
         }
         if(ae.getSource() == frmP.getOpcmCrearMazo())
         {
@@ -417,67 +414,7 @@ public class Controlador implements ActionListener{
                     
                 }
                 
-            }
-            /*
-            try {
-                String data = con.leerDatos("Cartas.txt");
-                String lineas[] = data.split("\n");
-                String msj[] = null;
-                for (int i = 0; i < lineas.length ; i++) {
-                    String info[] = lineas[i].split(";");
-
-                    if(info[1].equals(String.valueOf(frmCM.getCmbCarta1().getSelectedItem())))
-                    {
-                        msj[0] = lineas[i];
-                    }
-                    
-                    if((!msj[0].equals(msj[1])) && objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta2().getSelectedItem())))
-                    {
-                        msj[1] = lineas[i];
-                    }
-                    /*
-                    if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta3().getSelectedItem())))
-                    {
-                        msj = datos(i);
-                    }
-                    if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta4().getSelectedItem())))
-                    {
-                        msj = datos(i);
-                    }
-                    if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta5().getSelectedItem())))
-                    {
-                        msj = datos(i);
-                    }
-                    if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta6().getSelectedItem())))
-                    {
-                        msj = datos(i);
-                    }
-                    if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta7().getSelectedItem())))
-                    {
-                        msj = datos(i);
-                    }
-                    if(objC.getListaC().get(i).getNombre().equals(String.valueOf(frmCM.getCmbCarta8().getSelectedItem())))
-                    {
-                        msj = datos(i);
-                    }
-
-                        try {
-                            con.EscribeDatos(msj[i], "Mazo1.txt");
-                            break;
-                        } catch (IOException ex) {
-                            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-
-
-                }
-                
-                
-            } catch (IOException ex) {
-                Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
-                
-            }
-            */
-            
+            }            
         }
         if(ae.getSource() == frmP.getOpcmConsultarMazos())
         {
@@ -517,35 +454,7 @@ public class Controlador implements ActionListener{
                 else
                 {
                     frmConultaM.getBtnSiguiente().setVisible(true);
-                }
-                    /*int i = 1;
-                    if(ae.getSource() == frmConultaM.getBtnSiguiente() && i < n.length)
-                    {    
-                        JOptionPane.showMessageDialog(frmConultaM, "llegue a sig");
-                        data = con.leerDatos("Mazo" + String.valueOf(i) + ".txt");
-                        auxMazo(data);
-                        i++;
-                        frmConultaM.getBtnAnterior().setVisible(true);
-                    }
-                    else if(ae.getSource() == frmConultaM.getBtnAnterior()&& i < n.length)
-                    {
-                        i--;
-                        data = con.leerDatos("Mazo" + String.valueOf(i) + ".txt");
-                        auxMazo(data);
-                        if(i == 0)
-                        {
-                            frmConultaM.getBtnAnterior().setVisible(false);
-                        }
-                    }
-                }
-                else
-                {
-                    frmConultaM.getBtnSiguiente().setVisible(false);
-                }*/
-                
-                
-                   
-                
+                } 
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo (Mazo#.txt)");
             }
@@ -833,9 +742,5 @@ public class Controlador implements ActionListener{
         
         frmConultaM.getPgrBarElixir().setValue((((Integer.parseInt(info1[7]) + Integer.parseInt(info2[7]) + Integer.parseInt(info3[7]) + Integer.parseInt(info4[7]) +
                 Integer.parseInt(info5[7]) + Integer.parseInt(info6[7]) + Integer.parseInt(info7[7]) +Integer.parseInt(info8[7]))/8)*100)/10);
-        
-        /*frmConultaM.getPgrBarVida().setValue((Integer.parseInt(info1[5]) + Integer.parseInt(info2[5]) + Integer.parseInt(info3[5]) + Integer.parseInt(info4[5]) +
-                Integer.parseInt(info5[5]) + Integer.parseInt(info6[5]) + Integer.parseInt(info7[5]) +Integer.parseInt(info8[5]))/1000);
-        //ifs y imagenes*/
     }
 }
