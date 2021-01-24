@@ -553,6 +553,7 @@ public class Controlador implements ActionListener{
         }
         if(ae.getSource() == frmConultaM.getBtnSiguiente())
         {   
+            
             String dato;
             try {
                 dato = con.leerDatos("Mazos.txt");
@@ -565,57 +566,53 @@ public class Controlador implements ActionListener{
                         
                         String data;
                         data = con.leerDatos("Mazo" + String.valueOf(this.n_mazo) + ".txt");
+                        this.n_mazo += 1;
                         auxMazo(data);
-                        this.n_mazo++;
+                        
                         frmConultaM.getBtnAnterior().setVisible(true);
                     }
-                    else
+                    if(this.n_mazo == n.length)
                     {
                         frmConultaM.getBtnSiguiente().setVisible(false);
                     }
                 }
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo");
-            }  
+            }
+            
         }
         if(ae.getSource() == frmConultaM.getBtnAnterior())
         {   
             String dato;
             try {
                 dato = con.leerDatos("Mazos.txt");
-                String n[] = dato.split("\n");
-                
-                    //int n_mazo = 1;
-                    if(this.n_mazo > 0)
-                    {
-                        
-                        if(this.n_mazo == n.length)
-                        {
-                            frmConultaM.getBtnSiguiente().setVisible(true);
-                        }
-                        
-                        String data;
-                        this.n_mazo--;
-                        data = con.leerDatos("Mazo" + String.valueOf(this.n_mazo) + ".txt");
-                        auxMazo(data);
-                        if(this.n_mazo == 0)
-                        {
-                            frmConultaM.getBtnAnterior().setVisible(false);
-                        }
-                    }
-                    else
-                    {
-                        frmConultaM.getBtnAnterior().setVisible(false);
-                    }
-                
+                String n[] = dato.split("\n");                        
+                if(this.n_mazo == n.length)
+                {
+                    frmConultaM.getBtnSiguiente().setVisible(true);
+                    String data;
+                    this.n_mazo -=2;
+                    data = con.leerDatos("Mazo" + String.valueOf(this.n_mazo) + ".txt");
+                    auxMazo(data);
+                }
+                else
+                {
+                    String data;
+                    this.n_mazo -=1;
+                    data = con.leerDatos("Mazo" + String.valueOf(this.n_mazo) + ".txt");
+                    auxMazo(data);
+                }
+                if(this.n_mazo == 0)
+                {
+                    frmConultaM.getBtnAnterior().setVisible(false);
+                    this.n_mazo += 1;
+                }
             } 
             catch (IOException ex) {
                 JOptionPane.showMessageDialog(frmCM, "Error al abrir el archivo (Mazos)");
                 
                 frmConultaM.getBtnSiguiente().setVisible(true);
             }
-            
-            
         }
         
     }
