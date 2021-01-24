@@ -423,7 +423,7 @@ public class ConsultarMazo extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1095,7 +1095,6 @@ public class ConsultarMazo extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblC1;
@@ -1109,11 +1108,9 @@ public class ConsultarMazo extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblElixir;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblUtilidad;
-    private javax.swing.JLabel lblUtilidad2;
     private javax.swing.JLabel lblVida;
     private javax.swing.JProgressBar pgrBarElixir;
     private javax.swing.JProgressBar pgrBarUtilidad;
-    private javax.swing.JProgressBar pgrBarUtilidad2;
     private javax.swing.JProgressBar pgrBarVida;
     private javax.swing.JPanel pndC1;
     private javax.swing.JPanel pndC2;
