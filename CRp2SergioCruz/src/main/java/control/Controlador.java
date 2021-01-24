@@ -481,6 +481,23 @@ public class Controlador implements ActionListener{
         }
         if(ae.getSource() == frmP.getOpcmConsultarMazos())
         {
+            //Imagenes escaldas
+            String rutau = "D:\\JAVA\\Archivos\\ClashP2Repo\\CRp2SergioCruz\\src\\main\\java\\Imagenes\\proy\\utilidad.png";
+            ImageIcon imgIconUtilidad = new ImageIcon(rutau);
+            Icon icono = new ImageIcon(imgIconUtilidad.getImage().getScaledInstance(frmConultaM.getLblUtilidad().getWidth(),frmConultaM.getLblUtilidad().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+            frmConultaM.getLblUtilidad().setIcon(icono);//se establece la imagen en el label
+            
+            String rutae = "D:\\JAVA\\Archivos\\ClashP2Repo\\CRp2SergioCruz\\src\\main\\java\\Imagenes\\proy\\elixir.png";
+            ImageIcon imgIconElixir = new ImageIcon(rutae);
+            Icon iconoe = new ImageIcon(imgIconElixir.getImage().getScaledInstance(frmConultaM.getLblElixir().getWidth(),frmConultaM.getLblElixir().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+            frmConultaM.getLblElixir().setIcon(iconoe);//se establece la imagen en el label
+            
+            String rutav = "D:\\JAVA\\Archivos\\ClashP2Repo\\CRp2SergioCruz\\src\\main\\java\\Imagenes\\proy\\salud.png";
+            ImageIcon imgIconVIda = new ImageIcon(rutav);
+            Icon iconov = new ImageIcon(imgIconVIda.getImage().getScaledInstance(frmConultaM.getLblVida().getWidth(),frmConultaM.getLblVida().getHeight() , Image.SCALE_DEFAULT));//como se va a abriri la imagen
+            frmConultaM.getLblVida().setIcon(iconov);//se establece la imagen en el label
+            
+            //codigo ventana
             frmConultaM.getBtnAnterior().setVisible(false);
             if(this.n_mazo > 1)
             {
@@ -799,14 +816,29 @@ public class Controlador implements ActionListener{
         frmConultaM.getLblC8().setIcon(icono8);//se establece la imagen en el label
         
         //progress bar
+        int vida = (Integer.parseInt(info1[7]) + Integer.parseInt(info2[7]) + Integer.parseInt(info3[7]) + Integer.parseInt(info4[7]) +
+                Integer.parseInt(info5[7]) + Integer.parseInt(info6[7]) + Integer.parseInt(info7[7]) +Integer.parseInt(info8[7]));
+        if(vida > 1000)
+        {
+            frmConultaM.getPgrBarVida().setValue(vida/1000);
+        }
+        else if(vida > 10000)
+        {
+            frmConultaM.getPgrBarVida().setValue(vida/10000);
+        }
+        else
+        {
+            frmConultaM.getPgrBarVida().setValue(vida);
+        }
+        
         frmConultaM.getPgrBarUtilidad().setValue((Integer.parseInt(info1[11]) + Integer.parseInt(info2[11]) + Integer.parseInt(info3[11]) + Integer.parseInt(info4[11]) +
                 Integer.parseInt(info5[11]) + Integer.parseInt(info6[11]) + Integer.parseInt(info7[11]) +Integer.parseInt(info8[11]))/100);
         
         frmConultaM.getPgrBarElixir().setValue((((Integer.parseInt(info1[7]) + Integer.parseInt(info2[7]) + Integer.parseInt(info3[7]) + Integer.parseInt(info4[7]) +
                 Integer.parseInt(info5[7]) + Integer.parseInt(info6[7]) + Integer.parseInt(info7[7]) +Integer.parseInt(info8[7]))/8)*100)/10);
         
-        frmConultaM.getPgrBarVida().setValue((Integer.parseInt(info1[5]) + Integer.parseInt(info2[5]) + Integer.parseInt(info3[5]) + Integer.parseInt(info4[5]) +
+        /*frmConultaM.getPgrBarVida().setValue((Integer.parseInt(info1[5]) + Integer.parseInt(info2[5]) + Integer.parseInt(info3[5]) + Integer.parseInt(info4[5]) +
                 Integer.parseInt(info5[5]) + Integer.parseInt(info6[5]) + Integer.parseInt(info7[5]) +Integer.parseInt(info8[5]))/1000);
-        //ifs y imagenes
+        //ifs y imagenes*/
     }
 }
