@@ -252,7 +252,6 @@ public class Controlador implements ActionListener{
                 frmRC.getTxtRuta().setText("");
                 frmRC.getTxtTiempo().setText("");
                 frmRC.getTxtVida().setText("");
-                frmRC.getTxtaDescripcion().setText("");
                 frmRC.getLblIcon().setIcon(null);
                 //objC = null;
             }

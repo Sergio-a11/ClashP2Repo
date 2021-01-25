@@ -51,9 +51,6 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         cmbCalidad = new javax.swing.JComboBox<>();
         lblRuta = new javax.swing.JLabel();
         txtRuta = new javax.swing.JTextField();
-        lblDesc = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtaDescripcion = new javax.swing.JTextArea();
         btnSubirImagen = new javax.swing.JButton();
         btnRegistrarCarta = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
@@ -126,13 +123,6 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                 txtRutaActionPerformed(evt);
             }
         });
-
-        lblDesc.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
-        lblDesc.setText("Descripción");
-
-        txtaDescripcion.setColumns(20);
-        txtaDescripcion.setRows(5);
-        jScrollPane1.setViewportView(txtaDescripcion);
 
         btnSubirImagen.setText("Subir Imagen");
 
@@ -328,18 +318,12 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                             .addComponent(pndTropa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pndFondoRegCartaLayout.createSequentialGroup()
-                        .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pndFondoRegCartaLayout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addComponent(btnSubirImagen)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblRuta)
-                                .addGap(37, 37, 37)
-                                .addComponent(txtRuta))
-                            .addGroup(pndFondoRegCartaLayout.createSequentialGroup()
-                                .addComponent(lblDesc)
-                                .addGap(38, 38, 38)
-                                .addComponent(jScrollPane1)))
+                        .addGap(13, 13, 13)
+                        .addComponent(btnSubirImagen)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblRuta)
+                        .addGap(37, 37, 37)
+                        .addComponent(txtRuta)
                         .addGap(18, 18, 18))))
         );
         pndFondoRegCartaLayout.setVerticalGroup(
@@ -385,11 +369,7 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                 .addComponent(pndHechizo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pndTropa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDesc)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addGap(141, 141, 141)
                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSubirImagen)
                     .addComponent(lblRuta)
@@ -475,14 +455,6 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         this.cmbTipo = cmbTipo;
     }
 
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
-    }
-
     public JLabel getLblAlcance() {
         return lblAlcance;
     }
@@ -513,14 +485,6 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
 
     public void setLblDano(JLabel lblDano) {
         this.lblDano = lblDano;
-    }
-
-    public JLabel getLblDesc() {
-        return lblDesc;
-    }
-
-    public void setLblDesc(JLabel lblDesc) {
-        this.lblDesc = lblDesc;
     }
 
     public JLabel getLblDuracion() {
@@ -643,14 +607,6 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         this.txtRuta = txtRuta;
     }
 
-    public JTextArea getTxtaDescripcion() {
-        return txtaDescripcion;
-    }
-
-    public void setTxtaDescripcion(JTextArea txtaDescripcion) {
-        this.txtaDescripcion = txtaDescripcion;
-    }
-
     public JTextField getTxtCosto() {
         return txtCosto;
     }
@@ -768,12 +724,10 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> cmbObjs;
     private javax.swing.JComboBox<String> cmbTipo;
     private javax.swing.JComboBox<String> cmbVelocidad;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAlcance;
     private javax.swing.JLabel lblCalidad;
     private javax.swing.JLabel lblCosto;
     private javax.swing.JLabel lblDano;
-    private javax.swing.JLabel lblDesc;
     private javax.swing.JLabel lblDuracion;
     private javax.swing.JLabel lblIcon;
     private javax.swing.JLabel lblNombre;
@@ -800,6 +754,5 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtRuta;
     private javax.swing.JTextField txtTiempo;
     private javax.swing.JTextField txtVida;
-    private javax.swing.JTextArea txtaDescripcion;
     // End of variables declaration//GEN-END:variables
 }
