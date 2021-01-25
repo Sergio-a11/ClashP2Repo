@@ -72,7 +72,7 @@ public class FormatoEntradaExcepcion extends Exception {
 
     /**
      * establece un número de error para controlar una excepcion
-     * @param nroRegitro
+     * @param nroRegitro número de registro de error
      */
     public void setNroError(int nroRegitro) {
         this.nroError = nroRegitro;
@@ -88,7 +88,7 @@ public class FormatoEntradaExcepcion extends Exception {
 
     /**
      * establece un mensaje de error
-     * @param msg
+     * @param msg mensaje de error
      */
     public void setMsg(String msg) {
         this.msg = msg;

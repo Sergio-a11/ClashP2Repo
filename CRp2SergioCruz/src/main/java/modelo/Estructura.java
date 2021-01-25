@@ -44,7 +44,7 @@ public class Estructura extends Carta{
 
     /**
      * retorna el tiempo de la estructura en la arena
-     * @return
+     * @return int
      */
     public int getTiempoEnBatalla() {
         return TiempoEnBatalla;
@@ -52,7 +52,7 @@ public class Estructura extends Carta{
 
     /**
      * establece el tiempo de la estructura en la arena
-     * @param TiempoEnBatalla
+     * @param TiempoEnBatalla tiempo de la estructura en la arena
      */
     public void setTiempoEnBatalla(int TiempoEnBatalla) {
         this.TiempoEnBatalla = TiempoEnBatalla;

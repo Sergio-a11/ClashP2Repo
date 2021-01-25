@@ -260,7 +260,7 @@ public abstract class Carta {
 
     /**
      * Método abstracto para conocer la utilidad de una carta en partida
-     * @return
+     * @return String
      */
 
     

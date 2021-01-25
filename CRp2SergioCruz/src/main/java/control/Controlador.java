@@ -40,7 +40,7 @@ public class Controlador implements ActionListener{
 
     /**
      * Constructor básico, permite inicializar, variables necesarias en ejecución, inicializar botones e interfaces con sus respectivos actions listener
-     * @throws IOException
+     * @throws IOException Excepcion general
      */
     public Controlador() throws IOException {
         this.frmP = new VentanaPrincipal();
@@ -74,7 +74,7 @@ public class Controlador implements ActionListener{
 
     /**
      * Controla las acciones que se generan por parte del usuario en la interfaz de usuario
-     * @param ae
+     * @param ae Oyente de eventos
      */
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -682,8 +682,8 @@ public class Controlador implements ActionListener{
     
     /**
      * Método para controlar y evitar la repetición de cartas en un mazo
-     * @param lineas
-     * @return
+     * @param lineas informacion de las mazos como lineas
+     * @return boolean
      */
     public boolean repetido(String lineas[])
     {

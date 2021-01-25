@@ -16,6 +16,7 @@ public class CRp2SergioCruz {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException Excepcion general
      */
     public static void main(String[] args) throws IOException {
         Controlador objC = new Controlador();

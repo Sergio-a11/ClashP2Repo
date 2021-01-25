@@ -55,7 +55,7 @@ public class Hechizo extends Carta{
 
     /**
      * establece el tiempo de accion del hechizo en la arena
-     * @param duracion
+     * @param duracion tiempo de accion del hechizo en la arena
      */
     public void setDuracion(int duracion) {
         this.duracion = duracion;
@@ -63,7 +63,7 @@ public class Hechizo extends Carta{
 
     /**
      * retorna el radio de accion del hechizo en la arena
-     * @return
+     * @return int
      */
     public int getRadio() {
         return radio;
