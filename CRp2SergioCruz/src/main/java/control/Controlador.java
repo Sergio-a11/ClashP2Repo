@@ -524,7 +524,7 @@ public class Controlador implements ActionListener{
         }
         if(ae.getSource() == frmP.getOpcmSalir())
         {
-            System.exit(1);
+            System.exit(0);
         }
     }
     
