@@ -522,7 +522,10 @@ public class Controlador implements ActionListener{
                 frmConultaM.getBtnSiguiente().setVisible(true);
             }
         }
-        
+        if(ae.getSource() == frmP.getOpcmSalir())
+        {
+            System.exit(1);
+        }
     }
     
     public void abrirVentana(JInternalFrame frm)

@@ -132,7 +132,7 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         lblTitulo.setText("Registro de Cartas");
 
         lblTiempo.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
-        lblTiempo.setText("Tiempo en Arena");
+        lblTiempo.setText("Tiempo en Arena (s)");
 
         txtTiempo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,10 +164,10 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
         btnMas.setText("*Más Opciones*");
 
         lblDuracion.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
-        lblDuracion.setText("Duración");
+        lblDuracion.setText("Duración (s)");
 
         lblRadio.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 18)); // NOI18N
-        lblRadio.setText("Radio");
+        lblRadio.setText("Radio (▀)");
 
         javax.swing.GroupLayout pndHechizoLayout = new javax.swing.GroupLayout(pndHechizo);
         pndHechizo.setLayout(pndHechizoLayout);
@@ -369,7 +369,7 @@ public class VentanaRegistrarCarta extends javax.swing.JInternalFrame {
                 .addComponent(pndHechizo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pndTropa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(141, 141, 141)
+                .addGap(18, 18, 18)
                 .addGroup(pndFondoRegCartaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSubirImagen)
                     .addComponent(lblRuta)

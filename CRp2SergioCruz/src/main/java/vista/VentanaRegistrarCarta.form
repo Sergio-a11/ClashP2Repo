@@ -157,9 +157,9 @@
                   <Component id="pndEstructuras" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="pndHechizo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Component id="pndTropa" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnSubirImagen" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblRuta" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -343,7 +343,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Tiempo en Arena"/>
+                <Property name="text" type="java.lang.String" value="Tiempo en Arena (s)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTiempo">
@@ -404,7 +404,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Duraci&#xf3;n"/>
+                <Property name="text" type="java.lang.String" value="Duraci&#xf3;n (s)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtDuracion">
@@ -414,7 +414,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Microsoft YaHei UI Light" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Radio"/>
+                <Property name="text" type="java.lang.String" value="Radio (&#x2580;)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtRadio">
