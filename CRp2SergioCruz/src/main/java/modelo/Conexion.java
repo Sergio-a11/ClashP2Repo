@@ -12,25 +12,59 @@ import java.io.*;
  * @author Estudiante
  */
 public class Conexion {
-  protected BufferedReader ent ;
- protected FileReader archLee;
- protected FileWriter archEscr;
- protected PrintWriter sal; 
 
+    /**
+     * Buffer de lectura
+     */
+    protected BufferedReader ent ;
+
+    /**
+     * lector de archivos
+     */
+    protected FileReader archLee;
+
+    /**
+     * escritor de archivos
+     */
+    protected FileWriter archEscr;
+ 
+    /**
+     * impresor de archivos
+     */
+    protected PrintWriter sal; 
+
+    /**
+     * Constructor paramétrico
+     * @param ent Buffer de lectura
+     * @param archLee lector de archivos
+     * @param archEscr escritor de archivos
+     * @param sal impresor de archivos
+     */
     public Conexion(BufferedReader ent, FileReader archLee, FileWriter archEscr, PrintWriter sal) {
         this.ent = ent;
         this.archLee = archLee;
         this.archEscr = archEscr;
         this.sal = sal;
     }
-  public Conexion() throws IOException {
+
+    /**
+     * Constructor básico
+     * @throws IOException excepcion Archivo no encotrada
+     */
+    public Conexion() throws IOException {
        // this.ent = ent;
        this.archLee = null;
        this.archEscr = null;
        // this.sal = sal;
     }
   
-  public String leerDatos(String nomArchivo) throws IOException{
+    /**
+     * Retorna los datos extraidos de un archivo
+     * @param nomArchivo nombre del archivo a leer
+     * @return String
+     * @throws IOException excepcion, archivo no encotrado
+     */
+    public String leerDatos(String nomArchivo) throws IOException{
   //System.out.println("Entré...");
    this.archLee = new FileReader(nomArchivo);
    ent = new BufferedReader(archLee);
@@ -44,7 +78,14 @@ public class Conexion {
     ent.close();
     return datos;
  }
- public void EscribeDatos(String datos, String nomArchivo) throws IOException
+
+    /**
+     * Escribe datos en un archivo
+     * @param datos datos a plasmar
+     * @param nomArchivo nombre del archivo
+     * @throws IOException excepcion, archivo no encontrado
+     */
+    public void EscribeDatos(String datos, String nomArchivo) throws IOException
  { 
    archEscr= new FileWriter(nomArchivo,true);
    sal = new PrintWriter(archEscr);

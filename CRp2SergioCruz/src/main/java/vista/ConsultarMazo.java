@@ -90,6 +90,7 @@ public class ConsultarMazo extends javax.swing.JInternalFrame {
         pgrBarElixir = new javax.swing.JProgressBar();
         lblElixir = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lblTotalMazos = new javax.swing.JLabel();
 
         setClosable(true);
         setMaximizable(true);
@@ -418,6 +419,8 @@ public class ConsultarMazo extends javax.swing.JInternalFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
+        lblTotalMazos.setText("Total de mazos: ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -509,11 +512,17 @@ public class ConsultarMazo extends javax.swing.JInternalFrame {
                         .addComponent(lblTitulo)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTotalMazos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(25, 25, 25)
+                .addComponent(lblTotalMazos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTitulo)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1052,8 +1061,14 @@ public class ConsultarMazo extends javax.swing.JInternalFrame {
     public void setPgrBarVida(JProgressBar pgrBarVida) {
         this.pgrBarVida = pgrBarVida;
     }
-    
-    
+
+    public JLabel getLblTotalMazos() {
+        return lblTotalMazos;
+    }
+
+    public void setLblTotalMazos(JLabel lblTotalMazos) {
+        this.lblTotalMazos = lblTotalMazos;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Ccalidad1;
@@ -1099,6 +1114,7 @@ public class ConsultarMazo extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblC8;
     private javax.swing.JLabel lblElixir;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTotalMazos;
     private javax.swing.JLabel lblUtilidad;
     private javax.swing.JLabel lblVida;
     private javax.swing.JProgressBar pgrBarElixir;

@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
 import modelo.*;
 import vista.*;
 /**
- *
+ * Clase que Controla la logica del progrma y los procesos de la vista desde la interfaz de usuario
  * @author Sergio Cruz
  */
 public class Controlador implements ActionListener{
@@ -38,6 +38,10 @@ public class Controlador implements ActionListener{
     Conexion con;
     int n_mazo;
 
+    /**
+     * Constructor básico, permite inicializar, variables necesarias en ejecución, inicializar botones e interfaces con sus respectivos actions listener
+     * @throws IOException
+     */
     public Controlador() throws IOException {
         this.frmP = new VentanaPrincipal();
         this.frmRC = new VentanaRegistrarCarta();
@@ -68,6 +72,10 @@ public class Controlador implements ActionListener{
         this.n_mazo = 1;
     }
 
+    /**
+     * Controla las acciones que se generan por parte del usuario en la interfaz de usuario
+     * @param ae
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource() == frmP.getOpcmRegistrarCarta())
@@ -147,6 +155,10 @@ public class Controlador implements ActionListener{
                         JOptionPane.showMessageDialog(frmP, "Error, se han introducido valores NO númericos " + mensaje[1]);
                         flag = true;
                     }
+                    catch (FormatoEntradaExcepcion ex) {
+                        JOptionPane.showMessageDialog(frmP, ex.toString() + "(daño)");
+                        flag = true;
+                    }
                     
                     carta = est;
                     break;
@@ -177,6 +189,10 @@ public class Controlador implements ActionListener{
                     {
                         String mensaje[] = ex.toString().split(":");
                         JOptionPane.showMessageDialog(frmP, "Error, se han introducido valores NO númericos " + mensaje[1]);
+                        flag = true;
+                    }
+                    catch (FormatoEntradaExcepcion ex) {
+                        JOptionPane.showMessageDialog(frmP, ex.toString() + "(daño)");
                         flag = true;
                     }
                     
@@ -211,6 +227,10 @@ public class Controlador implements ActionListener{
                     {
                         String mensaje[] = ex.toString().split(":");
                         JOptionPane.showMessageDialog(frmP, "Error, se han introducido valores NO númericos " + mensaje[1]);
+                        flag = true;
+                    } 
+                    catch (FormatoEntradaExcepcion ex) {
+                        JOptionPane.showMessageDialog(frmP, ex.toString() + "(daño)");
                         flag = true;
                     }
                     carta = tro;
@@ -446,6 +466,7 @@ public class Controlador implements ActionListener{
                 auxMazo(data);
                 String dato = con.leerDatos("Mazos.txt");
                 String n[] = dato.split("\n");
+                frmConultaM.getLblTotalMazos().setText(frmConultaM.getLblTotalMazos().getText() + String.valueOf(n.length));
                 if(n.length == 1)
                 {
                     frmConultaM.getBtnSiguiente().setVisible(false);
@@ -528,6 +549,10 @@ public class Controlador implements ActionListener{
         }
     }
     
+    /**
+     * Método para abrir ventanas internas y controlar sus excepciones
+     * @param frm ventana a abrir
+     */
     public void abrirVentana(JInternalFrame frm)
     {
         if(frm.isVisible())
@@ -555,15 +580,22 @@ public class Controlador implements ActionListener{
             
     }
 
+    /**
+     * Método para iniciar la ventana pricipal y ajustes iniciales
+     */
     public void iniciar() {
-        frmP.setTitle("CR");
+        frmP.setTitle("Proyecto Gestor de cartas y Mazos para CLash Royale - Sergio Cruz");
         frmP.setVisible(true);
         frmRC.getPndEstructuras().setVisible(false);
         frmRC.getPndHechizo().setVisible(false);
         frmRC.getPndTropa().setVisible(false);
     }
     
-    
+    /**
+     * Método para organizar los datos a agregar en la tabla y en los archivos de registro
+     * @param i indica el número de la carta a organizar en la lista de cartas
+     * @return String
+     */
     public String datos(int i)
     {
         String msj = "";
@@ -610,6 +642,11 @@ public class Controlador implements ActionListener{
         return msj;
     }
     
+    /**
+     * Método para agregar datos en la tabla de conslta, desde un archivo txt
+     * @param tabla tabla a completar
+     * @throws IOException Excepcion, archivo no encontrado
+     */
     public void agregarDatosPersistencia(JTable tabla) throws IOException
     {
         DefaultTableModel plantilla = (DefaultTableModel) tabla.getModel();
@@ -627,6 +664,11 @@ public class Controlador implements ActionListener{
         
     }
 
+    /**
+     * Método para organizar los datos en la tabla de consulta
+     * @param datos datos a organizar
+     * @param tabla tabla base para extraer modelo
+     */
     public void archivoTabla(String datos, JTable tabla) {
         DefaultTableModel plantilla = (DefaultTableModel) tabla.getModel();
         String lista[] = datos.split("\n");
@@ -638,6 +680,11 @@ public class Controlador implements ActionListener{
         }
     }
     
+    /**
+     * Método para controlar y evitar la repetición de cartas en un mazo
+     * @param lineas
+     * @return
+     */
     public boolean repetido(String lineas[])
     {
         boolean flag = false;
@@ -655,6 +702,10 @@ public class Controlador implements ActionListener{
         return flag;
     }
     
+    /**
+     * Método para organizar los datos de las cartas de un mazo y reflejarse en la ventana consulta de mazo
+     * @param data datos del mazo
+     */
     public void auxMazo(String data)
     {
         String lineas[] = data.split("\n");
