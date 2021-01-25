@@ -354,7 +354,21 @@ public class Controlador implements ActionListener{
                             String.valueOf(frmCM.getCmbCarta6().getSelectedItem()),
                             String.valueOf(frmCM.getCmbCarta7().getSelectedItem()),
                             String.valueOf(frmCM.getCmbCarta8().getSelectedItem())};
-            if(repetido(mazo) == true)
+            //cartas repetidas???
+            boolean flag2 = false;
+            for (int i = 0; i < 7; i++) 
+            {
+                for (int j = i+1; j < 8 ; j++) 
+                {
+                    if(mazo[j].equals(mazo[i]))
+                    {
+                        flag2 = true;
+                        break;
+                    }
+                }
+            }
+            
+            if(flag2 == true)
             {
                 JOptionPane.showMessageDialog(frmCM, "Hay cartas repetidas, mazo NO guardado");
             }
@@ -680,27 +694,6 @@ public class Controlador implements ActionListener{
         }
     }
     
-    /**
-     * Método para controlar y evitar la repetición de cartas en un mazo
-     * @param lineas informacion de las mazos como lineas
-     * @return boolean
-     */
-    public boolean repetido(String lineas[])
-    {
-        boolean flag = false;
-        for (int i = 0; i < 7; i++) 
-        {
-            for (int j = i+1; j < 8 ; j++) 
-            {
-                if(lineas[j].equals(lineas[i]))
-                {
-                    flag = true;
-                    break;
-                }
-            }
-        }
-        return flag;
-    }
     
     /**
      * Método para organizar los datos de las cartas de un mazo y reflejarse en la ventana consulta de mazo
