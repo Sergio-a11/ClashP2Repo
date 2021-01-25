@@ -466,7 +466,7 @@ public class Controlador implements ActionListener{
                 auxMazo(data);
                 String dato = con.leerDatos("Mazos.txt");
                 String n[] = dato.split("\n");
-                frmConultaM.getLblTotalMazos().setText(frmConultaM.getLblTotalMazos().getText() + String.valueOf(n.length));
+                frmConultaM.getLblTotalMazos().setText("Total de mazos " + String.valueOf(n.length));
                 if(n.length == 1)
                 {
                     frmConultaM.getBtnSiguiente().setVisible(false);

@@ -1,0 +1,9 @@
+Hechizo;Tornado;N/A;N/A;30;0;Épica;3;N/A;3;N/A;11;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\tornado.png
+Estructura;Caja de duende;Tierra;Corto;250;3000;Especial;4;10;N/A;N/A;815;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\goblin_cage.png
+Tropa;Pekka;Tierra;Cuerpo a Cuerpo;2500;7000;Épica;7;N/A;N/A;Baja;1357;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\pekka.png
+Tropa;Espiritu de Hielo;Tierra y Aire;Medio;30;200;Común;1;N/A;N/A;Alta;230;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\snow_spirits.png
+Tropa;Zappies;Tierra y Aire;Medio;300;400;Especial;4;N/A;N/A;Baja;175;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\zappies.png
+Tropa;Mega Caballero;Tierra;Cuerpo a Cuerpo;6000;5000;Legendaria;7;N/A;N/A;Baja;1571;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\mega_knight.png
+Hechizo;Hielo;N/A;N/A;45;0;Épica;4;N/A;4;N/A;12;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\freeze.png
+Tropa;Cerdos Reales;Estructuras;Corto;450;2400;Especial;5;N/A;N/A;Alta;570;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\royal_hog.png
+

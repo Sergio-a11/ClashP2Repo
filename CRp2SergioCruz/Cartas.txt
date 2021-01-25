@@ -12,3 +12,4 @@ Tropa;Espiritu de Hielo;Tierra y Aire;Medio;30;200;Común;1;N/A;N/A;Alta;230;D:\
 Tropa;Zappies;Tierra y Aire;Medio;300;400;Especial;4;N/A;N/A;Baja;175;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\zappies.png
 Tropa;Mega Caballero;Tierra;Cuerpo a Cuerpo;6000;5000;Legendaria;7;N/A;N/A;Baja;1571;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\mega_knight.png
 Hechizo;Hielo;N/A;N/A;45;0;Épica;4;N/A;4;N/A;12;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\freeze.png
+Tropa;Cerdos Reales;Estructuras;Corto;450;2400;Especial;5;N/A;N/A;Alta;570;D:\JAVA\Archivos\ClashP2Repo\CRp2SergioCruz\src\main\java\Imagenes\royal_hog.png
